@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<circuit>
+  <version>1</version>
+  <attributes/>
+  <visualElements>
+    <visualElement><elementName>Clock</elementName><elementAttributes><entry><string>Label</string><string>clk</string></entry><entry><string>Frequency</string><int>1</int></entry></elementAttributes><pos x="100" y="100"/></visualElement>
+    <visualElement><elementName>In</elementName><elementAttributes><entry><string>Label</string><string>rst</string></entry><entry><string>Bits</string><int>1</int></entry></elementAttributes><pos x="100" y="160"/></visualElement>
+    <visualElement><elementName>In</elementName><elementAttributes><entry><string>Label</string><string>commit</string></entry><entry><string>Bits</string><int>1</int></entry></elementAttributes><pos x="100" y="220"/></visualElement>
+    <visualElement><elementName>In</elementName><elementAttributes><entry><string>Label</string><string>is_load</string></entry><entry><string>Bits</string><int>1</int></entry></elementAttributes><pos x="100" y="280"/></visualElement>
+    <visualElement><elementName>In</elementName><elementAttributes><entry><string>Label</string><string>is_branch</string></entry><entry><string>Bits</string><int>1</int></entry></elementAttributes><pos x="100" y="340"/></visualElement>
+    <visualElement><elementName>In</elementName><elementAttributes><entry><string>Label</string><string>clear</string></entry><entry><string>Bits</string><int>1</int></entry></elementAttributes><pos x="100" y="400"/></visualElement>
+    <visualElement><elementName>Out</elementName><elementAttributes><entry><string>Label</string><string>loads</string></entry><entry><string>Bits</string><int>8</int></entry></elementAttributes><pos x="900" y="100"/></visualElement>
+    <visualElement><elementName>Out</elementName><elementAttributes><entry><string>Label</string><string>branches</string></entry><entry><string>Bits</string><int>8</int></entry></elementAttributes><pos x="900" y="160"/></visualElement>
+    <visualElement><elementName>Text</elementName><elementAttributes><entry><string>Description</string><string>P56 Instruction-mix counters - Digital task
+Two 8-bit counters with enable and clear.
+Allowed parts: gates + multiplexer/decoder parts + flip-flops
+Do not rename, move or delete the input and output pins.</string></entry></elementAttributes><pos x="100" y="40"/></visualElement>
+    <visualElement><elementName>Testcase</elementName><elementAttributes><entry><string>Label</string><string>public tests</string></entry><entry><string>Testdata</string><testData><dataString>clk rst commit is_load is_branch clear loads branches
+C 1 0 1 1 0 0 0
+C 0 1 0 0 1 0 0
+C 0 0 1 1 1 0 0
+C 0 1 0 0 0 0 0
+C 0 0 1 1 0 0 0
+C 0 1 1 0 0 1 0
+C 0 1 0 1 0 1 1
+C 0 0 0 1 1 0 0
+C 0 0 1 1 0 0 0
+C 0 1 1 0 1 0 0
+C 0 0 0 1 1 0 0
+C 0 0 0 0 1 0 0
+C 0 1 1 1 1 0 0
+C 0 0 0 0 1 0 0
+C 0 0 1 0 1 0 0
+C 0 1 0 1 0 0 1
+C 0 1 1 1 1 0 0
+C 0 0 1 0 1 0 0
+C 0 1 1 0 1 0 0
+C 0 1 0 1 0 0 1
+C 0 1 1 1 0 1 2
+C 0 1 1 0 0 2 2
+C 1 1 1 1 1 0 0
+C 0 1 1 1 1 0 0
+C 0 0 0 0 1 0 0
+C 0 1 1 0 0 1 0
+C 0 0 1 1 1 0 0
+C 0 1 1 0 1 0 0
+C 0 0 0 1 0 0 0
+C 0 0 1 1 0 0 0
+C 0 1 1 1 1 0 0
+C 0 1 0 1 1 0 0
+C 0 0 1 1 1 0 0
+C 0 0 0 1 1 0 0
+C 0 1 1 0 0 1 0
+C 0 0 0 1 1 0 0
+C 0 1 0 0 0 0 0
+C 0 0 1 0 1 0 0
+C 0 1 0 0 0 0 0
+C 0 0 1 0 1 0 0
+C 0 1 1 0 0 1 0
+C 0 1 0 0 0 1 0
+C 0 1 0 0 0 1 0
+C 1 1 1 1 0 0 0
+C 0 1 1 1 1 0 0
+C 0 0 0 1 1 0 0
+C 0 1 1 0 1 0 0
+C 0 0 1 1 1 0 0
+C 0 0 0 1 1 0 0
+C 0 1 0 1 1 0 0
+C 0 0 0 0 1 0 0
+C 0 1 0 1 1 0 0
+C 0 1 1 1 1 0 0
+C 0 1 0 1 1 0 0
+C 1 0 0 0 1 0 0
+C 0 0 0 1 1 0 0
+C 0 1 1 1 0 1 1
+C 0 1 0 1 1 0 0
+C 0 0 1 0 0 0 0
+C 0 0 0 0 0 0 0
+C 0 0 1 0 0 0 0
+C 0 0 0 1 0 0 0
+C 0 0 1 1 0 0 0
+C 0 0 1 1 0 0 0
+C 0 0 0 1 0 0 0
+C 0 0 1 1 0 0 0
+C 0 1 0 1 1 0 0
+C 0 0 0 1 0 0 0
+C 0 0 0 1 1 0 0
+C 0 1 1 0 1 0 0
+C 0 0 1 0 1 0 0
+C 0 1 1 1 0 1 1
+C 0 0 1 0 0 1 1
+C 0 0 1 1 0 1 1
+C 0 0 1 1 1 0 0
+C 0 1 1 1 0 1 1
+C 0 1 1 1 0 2 2
+C 0 1 1 1 1 0 0
+C 0 0 0 0 0 0 0
+C 0 1 0 1 1 0 0
+C 0 0 0 0 0 0 0
+C 0 0 1 1 0 0 0
+C 0 0 0 1 0 0 0
+C 0 1 1 1 0 1 1
+C 0 1 0 0 1 0 0
+C 0 1 1 1 1 0 0
+C 0 0 1 1 0 0 0
+C 0 1 1 0 0 1 0
+C 0 0 0 0 1 0 0
+C 0 0 1 0 0 0 0
+C 0 1 0 1 0 0 1
+C 0 0 0 0 1 0 0
+C 0 1 1 0 1 0 0
+C 0 0 0 1 0 0 0
+C 0 0 1 1 1 0 0
+C 0 0 0 1 1 0 0
+C 1 0 0 0 1 0 0
+C 0 0 1 1 1 0 0
+C 0 0 1 0 0 0 0
+C 0 1 0 0 0 0 0
+C 0 1 1 0 1 0 0
+C 0 0 0 1 0 0 0
+C 0 0 1 1 1 0 0
+C 0 0 0 1 0 0 0
+C 0 0 1 0 0 0 0
+C 0 0 1 1 0 0 0
+C 0 1 1 0 1 0 0
+C 0 0 0 0 1 0 0
+C 0 1 0 1 1 0 0
+C 0 1 0 0 0 0 0
+C 0 1 1 0 1 0 0
+C 0 0 0 0 0 0 0
+C 0 0 1 1 1 0 0
+C 0 1 0 1 1 0 0
+C 0 0 1 1 0 0 0
+C 0 0 0 1 0 0 0
+C 0 1 0 1 1 0 0
+C 0 1 0 1 0 0 1
+C 1 1 1 0 0 0 0
+C 0 0 1 1 0 0 0
+C 0 0 1 0 0 0 0
+C 0 1 0 0 1 0 0
+C 0 1 1 0 0 1 0
+C 0 1 1 1 1 0 0
+C 0 0 0 1 0 0 0
+C 0 0 1 1 1 0 0
+C 0 0 1 1 1 0 0
+C 0 0 0 1 0 0 0
+C 0 1 1 0 0 1 0
+C 0 0 0 1 0 1 0
+C 0 1 0 1 1 0 0
+C 0 0 0 0 0 0 0
+C 0 0 1 1 0 0 0
+C 0 1 0 1 1 0 0
+C 0 0 1 0 0 0 0
+C 0 1 0 1 1 0 0
+C 0 0 1 0 1 0 0
+C 0 0 0 1 1 0 0
+C 0 1 1 1 1 0 0
+C 0 1 1 0 0 1 0
+C 0 1 1 1 0 2 1
+C 0 1 0 1 1 0 0
+C 0 0 0 1 1 0 0
+C 0 0 0 0 1 0 0
+C 0 0 0 1 0 0 0
+C 0 1 1 0 1 0 0
+C 0 1 1 1 0 1 1
+C 0 0 1 1 0 1 1
+C 0 1 0 0 1 0 0
+C 0 0 1 0 1 0 0
+C 1 1 1 0 1 0 0
+C 0 1 0 0 0 0 0
+C 0 0 0 0 1 0 0
+C 0 0 0 0 0 0 0
+C 0 1 0 1 1 0 0
+C 0 1 0 0 0 0 0
+C 0 1 0 0 0 0 0
+C 0 0 1 0 1 0 0
+C 0 0 0 1 0 0 0
+C 0 0 0 0 0 0 0</dataString></testData></entry></elementAttributes><pos x="100" y="500"/></visualElement>
+  </visualElements>
+  <wires/>
+  <measurementOrdering/>
+</circuit>

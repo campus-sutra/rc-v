@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<circuit>
+  <version>1</version>
+  <attributes/>
+  <visualElements>
+    <visualElement><elementName>In</elementName><elementAttributes><entry><string>Label</string><string>is_lui</string></entry><entry><string>Bits</string><int>1</int></entry></elementAttributes><pos x="100" y="100"/></visualElement>
+    <visualElement><elementName>In</elementName><elementAttributes><entry><string>Label</string><string>is_auipc</string></entry><entry><string>Bits</string><int>1</int></entry></elementAttributes><pos x="100" y="160"/></visualElement>
+    <visualElement><elementName>In</elementName><elementAttributes><entry><string>Label</string><string>is_jal</string></entry><entry><string>Bits</string><int>1</int></entry></elementAttributes><pos x="100" y="220"/></visualElement>
+    <visualElement><elementName>In</elementName><elementAttributes><entry><string>Label</string><string>is_jalr</string></entry><entry><string>Bits</string><int>1</int></entry></elementAttributes><pos x="100" y="280"/></visualElement>
+    <visualElement><elementName>In</elementName><elementAttributes><entry><string>Label</string><string>is_branch</string></entry><entry><string>Bits</string><int>1</int></entry></elementAttributes><pos x="100" y="340"/></visualElement>
+    <visualElement><elementName>In</elementName><elementAttributes><entry><string>Label</string><string>is_load</string></entry><entry><string>Bits</string><int>1</int></entry></elementAttributes><pos x="100" y="400"/></visualElement>
+    <visualElement><elementName>In</elementName><elementAttributes><entry><string>Label</string><string>is_store</string></entry><entry><string>Bits</string><int>1</int></entry></elementAttributes><pos x="100" y="460"/></visualElement>
+    <visualElement><elementName>In</elementName><elementAttributes><entry><string>Label</string><string>is_opimm</string></entry><entry><string>Bits</string><int>1</int></entry></elementAttributes><pos x="100" y="520"/></visualElement>
+    <visualElement><elementName>In</elementName><elementAttributes><entry><string>Label</string><string>is_op</string></entry><entry><string>Bits</string><int>1</int></entry></elementAttributes><pos x="100" y="580"/></visualElement>
+    <visualElement><elementName>In</elementName><elementAttributes><entry><string>Label</string><string>is_system</string></entry><entry><string>Bits</string><int>1</int></entry></elementAttributes><pos x="100" y="640"/></visualElement>
+    <visualElement><elementName>Out</elementName><elementAttributes><entry><string>Label</string><string>ctrl</string></entry><entry><string>Bits</string><int>16</int></entry></elementAttributes><pos x="900" y="100"/></visualElement>
+    <visualElement><elementName>Text</elementName><elementAttributes><entry><string>Description</string><string>P22 Hardwired control unit - Digital task
+Full size, gates only: one OR-of-classes equation per control bit.
+Allowed parts: And, Or, Not, NAnd, NOr, XOr, XNOr + wiring parts
+Do not rename, move or delete the input and output pins.</string></entry></elementAttributes><pos x="100" y="40"/></visualElement>
+    <visualElement><elementName>Testcase</elementName><elementAttributes><entry><string>Label</string><string>public tests</string></entry><entry><string>Testdata</string><testData><dataString>is_lui is_auipc is_jal is_jalr is_branch is_load is_store is_opimm is_op is_system ctrl
+0 0 0 1 0 0 0 0 0 0 20738
+0 0 0 0 0 0 1 0 0 0 4624
+0 0 1 0 0 0 0 0 0 0 16708
+0 1 0 0 0 0 0 0 0 0 28720
+0 0 0 1 0 0 0 0 0 0 20738
+0 0 0 1 0 0 0 0 0 0 20738
+0 0 0 1 0 0 0 0 0 0 20738
+0 0 0 0 0 0 1 0 0 0 4624
+1 0 0 0 0 0 0 0 0 0 22576
+0 0 0 0 0 0 0 0 0 1 16769
+0 0 0 0 0 0 0 0 0 1 16769
+0 0 0 0 1 0 0 0 0 0 40
+0 0 0 0 0 0 0 1 0 0 20480
+0 0 0 0 0 0 0 0 0 1 16769
+0 0 0 1 0 0 0 0 0 0 20738
+0 0 0 1 0 0 0 0 0 0 20738
+0 0 0 0 0 0 0 0 1 0 16384
+0 0 0 0 0 0 1 0 0 0 4624
+0 0 0 0 0 0 0 0 1 0 16384
+0 0 0 1 0 0 0 0 0 0 20738
+0 0 0 0 0 0 0 1 0 0 20480
+1 0 0 0 0 0 0 0 0 0 22576
+0 0 0 1 0 0 0 0 0 0 20738
+0 0 0 0 0 0 0 0 1 0 16384
+0 0 0 0 0 0 0 0 0 1 16769
+0 0 0 0 1 0 0 0 0 0 40
+0 1 0 0 0 0 0 0 0 0 28720
+0 0 0 0 0 0 0 0 1 0 16384
+0 0 0 0 0 0 0 1 0 0 20480
+1 0 0 0 0 0 0 0 0 0 22576
+0 0 0 0 0 0 0 0 0 1 16769
+0 0 0 0 0 0 0 1 0 0 20480
+0 1 0 0 0 0 0 0 0 0 28720
+0 0 0 1 0 0 0 0 0 0 20738
+0 0 0 0 0 0 0 0 0 1 16769
+0 0 0 0 0 0 0 0 0 1 16769
+0 0 0 0 0 0 0 0 1 0 16384
+0 1 0 0 0 0 0 0 0 0 28720
+1 0 0 0 0 0 0 0 0 0 22576
+0 0 0 0 0 0 1 0 0 0 4624
+0 0 0 1 0 0 0 0 0 0 20738
+0 0 0 0 0 0 0 1 0 0 20480
+0 0 0 0 0 0 0 0 0 1 16769
+1 0 0 0 0 0 0 0 0 0 22576
+0 1 0 0 0 0 0 0 0 0 28720
+0 0 0 0 0 0 0 0 1 0 16384
+0 0 1 0 0 0 0 0 0 0 16708
+0 0 0 0 0 0 0 1 0 0 20480
+0 1 0 0 0 0 0 0 0 0 28720
+0 0 0 1 0 0 0 0 0 0 20738
+0 1 0 0 0 0 0 0 0 0 28720
+1 0 0 0 0 0 0 0 0 0 22576
+0 0 0 0 0 1 0 0 0 0 21632
+0 0 0 0 0 0 1 0 0 0 4624
+0 0 0 0 0 0 0 0 1 0 16384
+0 0 0 0 0 1 0 0 0 0 21632
+0 1 0 0 0 0 0 0 0 0 28720
+0 0 1 0 0 0 0 0 0 0 16708
+0 0 0 0 0 0 0 0 0 1 16769
+0 1 0 0 0 0 0 0 0 0 28720
+0 0 0 0 1 0 0 0 0 0 40
+1 0 0 0 0 0 0 0 0 0 22576
+0 0 0 1 0 0 0 0 0 0 20738
+0 1 0 0 0 0 0 0 0 0 28720
+0 0 0 0 0 0 0 0 1 0 16384
+0 0 0 0 1 0 0 0 0 0 40
+0 0 1 0 0 0 0 0 0 0 16708
+0 0 0 0 0 1 0 0 0 0 21632
+0 1 0 0 0 0 0 0 0 0 28720
+0 0 0 0 0 0 0 1 0 0 20480
+1 0 0 0 0 0 0 0 0 0 22576
+0 0 0 0 0 1 0 0 0 0 21632
+0 0 1 0 0 0 0 0 0 0 16708
+0 0 0 0 0 0 0 1 0 0 20480
+0 0 0 0 0 0 0 1 0 0 20480
+0 0 0 0 1 0 0 0 0 0 40
+1 0 0 0 0 0 0 0 0 0 22576
+0 0 0 0 0 0 0 0 1 0 16384
+0 0 0 0 0 0 0 0 0 1 16769
+0 0 0 0 0 0 0 0 1 0 16384
+1 0 0 0 0 0 0 0 0 0 22576
+1 0 0 0 0 0 0 0 0 0 22576
+0 0 0 0 0 0 1 0 0 0 4624
+0 0 0 0 0 1 0 0 0 0 21632
+0 1 0 0 0 0 0 0 0 0 28720
+0 0 0 0 0 0 0 0 0 1 16769
+0 0 0 0 0 0 0 0 0 1 16769
+1 0 0 0 0 0 0 0 0 0 22576
+0 0 0 1 0 0 0 0 0 0 20738
+0 0 1 0 0 0 0 0 0 0 16708
+0 0 0 0 0 0 0 0 0 1 16769
+0 0 0 0 0 0 0 0 1 0 16384
+0 0 0 1 0 0 0 0 0 0 20738
+0 0 0 0 0 0 0 0 0 1 16769
+0 0 0 0 0 0 0 0 1 0 16384
+0 0 0 0 0 0 0 0 0 1 16769
+0 0 0 0 0 1 0 0 0 0 21632
+0 0 1 0 0 0 0 0 0 0 16708
+0 1 0 0 0 0 0 0 0 0 28720
+0 0 0 1 0 0 0 0 0 0 20738
+0 0 0 0 1 0 0 0 0 0 40
+0 0 0 0 0 0 0 1 0 0 20480
+0 0 0 0 0 0 0 0 0 1 16769
+0 0 1 0 0 0 0 0 0 0 16708
+0 0 0 0 0 0 0 0 1 0 16384
+0 0 0 0 1 0 0 0 0 0 40
+1 0 0 0 0 0 0 0 0 0 22576
+0 0 0 0 0 0 0 1 0 0 20480
+0 1 0 0 0 0 0 0 0 0 28720
+0 0 0 0 0 0 0 1 0 0 20480
+0 0 0 0 0 0 0 1 0 0 20480
+0 0 0 1 0 0 0 0 0 0 20738
+0 1 0 0 0 0 0 0 0 0 28720
+0 0 0 0 0 0 0 0 1 0 16384
+0 0 0 0 0 0 1 0 0 0 4624
+0 0 0 0 0 1 0 0 0 0 21632
+0 0 0 0 0 0 1 0 0 0 4624
+0 0 0 0 1 0 0 0 0 0 40
+0 0 0 0 0 0 0 0 1 0 16384
+1 0 0 0 0 0 0 0 0 0 22576
+0 0 0 1 0 0 0 0 0 0 20738
+0 0 0 0 0 0 0 0 0 1 16769
+0 0 0 0 0 1 0 0 0 0 21632
+0 0 0 0 0 0 1 0 0 0 4624
+0 0 0 0 0 0 0 1 0 0 20480
+0 0 0 0 0 0 0 0 0 1 16769
+0 0 0 0 1 0 0 0 0 0 40
+0 0 0 0 1 0 0 0 0 0 40
+0 0 0 0 0 0 0 0 0 1 16769
+0 0 0 1 0 0 0 0 0 0 20738
+0 0 0 0 0 0 0 1 0 0 20480
+0 0 0 1 0 0 0 0 0 0 20738
+0 0 0 1 0 0 0 0 0 0 20738
+0 0 1 0 0 0 0 0 0 0 16708
+0 0 0 0 0 0 0 0 1 0 16384
+0 0 0 1 0 0 0 0 0 0 20738
+0 0 0 0 1 0 0 0 0 0 40
+0 0 0 0 0 0 0 0 1 0 16384
+0 0 0 0 1 0 0 0 0 0 40
+0 0 0 0 0 0 0 1 0 0 20480
+0 0 1 0 0 0 0 0 0 0 16708
+0 0 0 0 0 0 1 0 0 0 4624
+0 0 0 0 0 0 0 0 1 0 16384
+0 0 0 0 1 0 0 0 0 0 40
+0 0 0 1 0 0 0 0 0 0 20738
+0 1 0 0 0 0 0 0 0 0 28720
+0 1 0 0 0 0 0 0 0 0 28720
+0 0 0 0 0 0 0 1 0 0 20480
+0 0 1 0 0 0 0 0 0 0 16708
+0 0 1 0 0 0 0 0 0 0 16708
+0 0 0 1 0 0 0 0 0 0 20738
+1 0 0 0 0 0 0 0 0 0 22576
+0 0 1 0 0 0 0 0 0 0 16708
+0 1 0 0 0 0 0 0 0 0 28720
+0 1 0 0 0 0 0 0 0 0 28720
+0 0 0 0 1 0 0 0 0 0 40
+1 0 0 0 0 0 0 0 0 0 22576
+0 0 0 0 0 1 0 0 0 0 21632
+0 0 0 0 0 0 0 1 0 0 20480
+1 0 0 0 0 0 0 0 0 0 22576</dataString></testData></entry></elementAttributes><pos x="100" y="740"/></visualElement>
+  </visualElements>
+  <wires/>
+  <measurementOrdering/>
+</circuit>

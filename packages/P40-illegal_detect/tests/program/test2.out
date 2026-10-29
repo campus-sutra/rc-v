@@ -1,0 +1,7 @@
+illegal instruction: mcause=00000002 offset=0
+illegal instruction: mcause=00000002 offset=4
+illegal instruction: mcause=00000002 offset=0
+illegal instruction: mcause=00000002 offset=4
+illegal instruction: mcause=00000002 offset=0
+illegal instruction: mcause=00000002 offset=4
+recovered after 6 traps

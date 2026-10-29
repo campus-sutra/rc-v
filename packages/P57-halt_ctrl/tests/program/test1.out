@@ -1,0 +1,5 @@
+commands: h help, c count, e <text> echo, q quit
+count: 2
+hello there
+unknown command x
+bye (5 commands)

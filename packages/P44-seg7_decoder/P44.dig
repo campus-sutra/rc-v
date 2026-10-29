@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<circuit>
+  <version>1</version>
+  <attributes/>
+  <visualElements>
+    <visualElement><elementName>In</elementName><elementAttributes><entry><string>Label</string><string>hex</string></entry><entry><string>Bits</string><int>4</int></entry></elementAttributes><pos x="100" y="100"/></visualElement>
+    <visualElement><elementName>Out</elementName><elementAttributes><entry><string>Label</string><string>seg</string></entry><entry><string>Bits</string><int>7</int></entry></elementAttributes><pos x="900" y="100"/></visualElement>
+    <visualElement><elementName>Text</elementName><elementAttributes><entry><string>Description</string><string>P44 Seven-segment decoder - Digital task
+Full size, gates only: seven 4-variable K-maps, one per segment.
+Allowed parts: And, Or, Not, NAnd, NOr, XOr, XNOr + wiring parts
+Do not rename, move or delete the input and output pins.</string></entry></elementAttributes><pos x="100" y="40"/></visualElement>
+    <visualElement><elementName>Testcase</elementName><elementAttributes><entry><string>Label</string><string>public tests</string></entry><entry><string>Testdata</string><testData><dataString>hex seg
+0 63
+1 6
+2 91
+3 79
+4 102
+5 109
+6 125
+7 7
+8 127
+9 111
+10 119
+11 124
+12 57
+13 94
+14 121
+15 113</dataString></testData></entry></elementAttributes><pos x="100" y="200"/></visualElement>
+  </visualElements>
+  <wires/>
+  <measurementOrdering/>
+</circuit>

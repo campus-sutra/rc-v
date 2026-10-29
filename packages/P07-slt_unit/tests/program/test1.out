@@ -1,0 +1,2 @@
+signed   A < B: yes
+unsigned A < B: no

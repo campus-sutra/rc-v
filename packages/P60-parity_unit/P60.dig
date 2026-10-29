@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<circuit>
+  <version>1</version>
+  <attributes/>
+  <visualElements>
+    <visualElement><elementName>In</elementName><elementAttributes><entry><string>Label</string><string>data</string></entry><entry><string>Bits</string><int>32</int></entry></elementAttributes><pos x="100" y="100"/></visualElement>
+    <visualElement><elementName>Out</elementName><elementAttributes><entry><string>Label</string><string>parity</string></entry><entry><string>Bits</string><int>5</int></entry></elementAttributes><pos x="900" y="100"/></visualElement>
+    <visualElement><elementName>Out</elementName><elementAttributes><entry><string>Label</string><string>odd</string></entry><entry><string>Bits</string><int>3</int></entry></elementAttributes><pos x="900" y="160"/></visualElement>
+    <visualElement><elementName>Text</elementName><elementAttributes><entry><string>Description</string><string>P60 Parity generator - Digital task
+XOR trees for each byte, then the totals.
+Allowed parts: all of the above + Add, Sub, Comparator, Neg
+Do not rename, move or delete the input and output pins.</string></entry></elementAttributes><pos x="100" y="40"/></visualElement>
+    <visualElement><elementName>Testcase</elementName><elementAttributes><entry><string>Label</string><string>public tests</string></entry><entry><string>Testdata</string><testData><dataString>data parity odd
+0 0 0
+2147483648 24 1
+6 0 0
+4294967295 0 0
+4148439348 27 3
+2147483647 24 1
+239220657 10 2
+970787123 0 0
+4294967295 0 0
+2147483648 24 1
+2879705167 15 4
+2147483647 24 1
+129895154 9 2
+2779827643 6 2
+10 0 0
+2435568867 9 2
+12 0 0
+2147483647 24 1
+2147483647 24 1
+0 0 0
+1619574146 0 0
+23 0 0
+13 17 1
+27 0 0
+9 0 0
+2147483647 24 1
+2954582114 27 3
+16 17 1
+4276573604 9 2
+6 0 0
+29 0 0
+2318470418 30 3
+4294967295 0 0
+3673082515 24 1
+2637214178 24 1
+3380421899 3 2
+3939897719 12 2
+13 17 1
+6 0 0
+2147483647 24 1
+3957709708 5 2
+3396847646 18 1
+4294967295 0 0
+2147483648 24 1
+2995875506 6 2
+2307147247 27 3
+2147483647 24 1
+4117560749 3 2
+635208612 15 4
+2282922776 0 0
+57831157 18 1
+3898235288 17 1
+2147483648 24 1
+2600751558 30 3
+1619594579 6 2
+744410555 30 3
+2147483648 24 1
+432671881 9 2
+2147483648 24 1
+3325206942 23 3
+186764559 10 2
+1276417048 10 2
+2775286204 5 2
+3680839617 17 1
+1433641979 5 2
+2509347387 5 2
+0 0 0
+3238957777 30 3
+3456685667 30 3
+11 17 1
+2627756702 3 2
+3825538410 18 1
+3421895856 9 2
+182547048 17 1
+0 0 0
+2147483647 24 1
+2 17 1
+3861431416 10 2
+3926494403 10 2
+4 17 1
+0 0 0
+2 17 1
+2147483647 24 1
+1066875269 5 2
+1237798108 15 4
+0 0 0
+1373444340 9 2
+1038197672 9 2
+2289507090 0 0
+11 17 1
+2147483647 24 1
+9 0 0
+774490716 20 1
+1523498557 5 2
+2057059732 27 3
+2857843751 20 1
+4294967295 0 0
+0 0 0
+18 0 0
+878890485 30 3
+130997592 29 3
+3179853679 0 0
+11 17 1
+26 17 1
+1923968481 6 2
+648503758 15 4
+2147483647 24 1
+4294967295 0 0
+2437908618 29 3
+0 0 0
+2898332814 20 1
+71530862 15 4
+24 0 0
+16 17 1
+282654850 10 2
+3798280208 17 1
+4169608042 24 1
+814830966 5 2
+0 0 0
+7 17 1
+1462173232 30 3
+2147483648 24 1
+2147483647 24 1
+3185846339 17 1
+4294967295 0 0
+573792170 0 0
+2345625831 18 1
+0 0 0
+4149056288 9 2
+811103642 6 2
+3347118968 30 3
+1 17 1
+4294192716 5 2
+0 0 0
+2147483647 24 1
+0 0 0
+680856159 0 0
+1961940552 18 1
+20 0 0
+25 17 1
+3466116670 29 3
+1877760324 20 1
+4294967295 0 0
+805701350 17 1
+879102481 24 1
+24 0 0
+2147483648 24 1
+2147483648 24 1
+11 17 1
+3830100622 20 1
+20 0 0
+4294967295 0 0
+4050407651 9 2
+0 0 0
+317623446 18 1
+26 17 1
+791486565 10 2
+0 0 0
+9 0 0
+2507565199 23 3</dataString></testData></entry></elementAttributes><pos x="100" y="260"/></visualElement>
+  </visualElements>
+  <wires/>
+  <measurementOrdering/>
+</circuit>

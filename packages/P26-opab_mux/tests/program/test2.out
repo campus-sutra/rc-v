@@ -1,0 +1,5 @@
+bit 11   = 1
+lui  imm = 00000001
+addi imm = -2048
+rebuilt  = 00000800
+check: OK

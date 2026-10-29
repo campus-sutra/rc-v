@@ -1,0 +1,2 @@
+stride 1: sum=32640 hits=192 misses=64 rate=75%
+stride 16: sum=30720 hits=0 misses=256 rate=0%

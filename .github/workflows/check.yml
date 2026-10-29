@@ -1,0 +1,86 @@
+# Runs on every pull request: checks the packages it touches.
+# Untrusted (code from forks): read-only token, no secrets. The result is
+# uploaded as an artifact; report.yml posts it on the pull request.
+name: check
+
+on:
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      packages:
+        description: "package numbers to check, e.g. 3 17 42 (empty = all)"
+        required: false
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # The checker itself always comes from main, never from the pull request.
+      - name: Trusted tools from main
+        run: git worktree add -q /tmp/base "${{ github.event.pull_request.base.sha || github.sha }}"
+
+      - name: Install Icarus Verilog
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq iverilog > /dev/null
+
+      - name: Cache Digital
+        id: digital
+        uses: actions/cache@v4
+        with:
+          path: ~/digital
+          key: digital-v0.31
+
+      - name: Download Digital v0.31
+        if: steps.digital.outputs.cache-hit != 'true'
+        run: |
+          mkdir -p ~/digital && cd ~/digital
+          curl -sSL -o Digital.zip https://github.com/hneemann/Digital/releases/download/v0.31/Digital.zip
+          unzip -q Digital.zip && rm Digital.zip
+
+      - name: Which packages, and may this author change them?
+        id: gate
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            git fetch -q origin registry && git show origin/registry:members.json > /tmp/members.json || echo '{}' > /tmp/members.json
+            python3 /tmp/base/tools/ci/pr_gate.py "${{ github.event.pull_request.base.sha }}" "${{ github.event.pull_request.head.sha }}" \
+              "${{ github.event.pull_request.user.login }}" /tmp/members.json > /tmp/gate.json
+          else
+            P="${{ github.event.inputs.packages }}"
+            [ -z "$P" ] && P=$(seq 1 66 | tr '\n' ' ')
+            python3 -c "import json,sys; print(json.dumps({'packages':[int(x) for x in sys.argv[1:]],'problems':[],'teacher':True}))" $P > /tmp/gate.json
+          fi
+          cat /tmp/gate.json
+          echo "packages=$(python3 -c "import json;print(' '.join(str(p) for p in json.load(open('/tmp/gate.json'))['packages']))")" >> "$GITHUB_OUTPUT"
+
+      - name: Check
+        env:
+          RCV_DIGITAL_JAR: /home/runner/digital/Digital/Digital.jar
+          RCV_ROOT: ${{ github.workspace }}
+        run: |
+          mkdir -p report
+          cp /tmp/gate.json report/gate.json
+          echo "${{ github.event.pull_request.number }}" > report/pr.txt
+          echo "${{ github.event.pull_request.user.login }}" > report/author.txt
+          status=0
+          if [ -n "${{ steps.gate.outputs.packages }}" ]; then
+            (cd /tmp/base/tools && python3 -m rcv.check ${{ steps.gate.outputs.packages }}                --md "$GITHUB_WORKSPACE/report/check.md" --json "$GITHUB_WORKSPACE/report/check.json") || status=1
+          else
+            echo "This pull request does not change any package." > report/check.md
+          fi
+          python3 /tmp/base/tools/ci/summary.py report > report/comment.md
+          cat report/comment.md >> "$GITHUB_STEP_SUMMARY"
+          if grep -q '"problems": \[\]' report/gate.json; then exit $status; else exit 1; fi
+
+      - name: Keep the report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: report
+          path: report/

@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<circuit>
+  <version>1</version>
+  <attributes/>
+  <visualElements>
+    <visualElement><elementName>In</elementName><elementAttributes><entry><string>Label</string><string>q_flat</string></entry><entry><string>Bits</string><int>16</int></entry></elementAttributes><pos x="100" y="100"/></visualElement>
+    <visualElement><elementName>In</elementName><elementAttributes><entry><string>Label</string><string>ra</string></entry><entry><string>Bits</string><int>2</int></entry></elementAttributes><pos x="100" y="160"/></visualElement>
+    <visualElement><elementName>Out</elementName><elementAttributes><entry><string>Label</string><string>rd</string></entry><entry><string>Bits</string><int>4</int></entry></elementAttributes><pos x="900" y="100"/></visualElement>
+    <visualElement><elementName>Text</elementName><elementAttributes><entry><string>Description</string><string>P13 Register-file read port - Digital task
+4 registers x 4 bits: build the 4-to-1 multiplexer from AND/OR gates (no Multiplexer part).
+Allowed parts: And, Or, Not, NAnd, NOr, XOr, XNOr + wiring parts
+Do not rename, move or delete the input and output pins.</string></entry></elementAttributes><pos x="100" y="40"/></visualElement>
+    <visualElement><elementName>Testcase</elementName><elementAttributes><entry><string>Label</string><string>public tests</string></entry><entry><string>Testdata</string><testData><dataString>q_flat ra rd
+32896 0 0
+32768 2 0
+18 1 1
+55018 0 10
+44896 2 15
+0 2 0
+7 1 0
+65535 3 15
+23 1 1
+63208 3 15
+52207 1 14
+3 1 0
+19 3 0
+9743 2 6
+27945 3 6
+57334 3 13
+32767 3 7
+47918 2 11
+13931 3 3
+41268 2 1
+22750 2 8
+39812 2 11
+32767 0 15
+63198 3 15
+9 1 0
+11412 3 2
+10005 1 1
+0 2 0
+19372 2 11
+32767 0 15
+38168 0 8
+16 0 0
+18 2 0
+8227 3 2
+18090 2 6
+31 0 15
+65535 0 15
+48771 2 14
+21372 2 3
+31647 2 11
+2767 2 10
+32768 1 0
+14 2 0
+65535 2 15
+26795 0 11
+22545 1 1
+11625 0 9
+30 3 0
+38351 3 9
+26231 0 7
+23459 0 3
+47818 0 10
+29 3 0
+29691 2 3
+13 3 0
+32768 3 8
+64487 0 7
+0 2 0
+26555 1 11
+47792 1 11
+0 2 0
+0 1 0
+2194 0 2
+11 2 0
+50841 3 12
+36659 2 15
+23924 3 5
+65460 1 11
+3 3 0
+4 1 0
+34706 2 7
+11168 0 0
+29833 2 4
+15 1 0
+43504 0 0
+20828 3 5
+32768 1 0
+51578 2 9
+24547 2 15
+58785 3 14
+64523 3 15
+33776 3 8
+22 1 1
+35849 2 12
+32768 3 8
+1523 1 15
+56579 2 13
+32768 2 0
+32768 1 0
+20739 3 5
+41611 1 8
+43876 3 10
+22292 3 5
+62113 1 10
+23 0 7
+27 0 11
+25931 0 11
+57242 2 15
+5539 2 5
+0 0 0
+19276 0 12
+30174 3 7
+12 2 0
+32768 1 0
+34116 2 5
+5574 3 1
+25 3 0
+4 3 0
+50197 0 5
+9096 3 2
+0 0 0
+4 0 4
+32767 0 15
+0 3 0
+32767 2 15
+25 0 9
+52851 2 14
+25144 1 3
+45199 2 0
+44731 1 11
+4641 3 1
+42701 2 6
+23 0 7
+41011 2 0
+58896 1 1
+19258 2 11
+32768 1 0
+65535 2 15
+3 2 0
+49311 3 12
+10017 0 1
+12 3 0
+62430 1 13
+34793 0 9
+0 1 0
+0 0 0
+0 1 0
+28 2 0
+46166 0 6
+7 3 0
+32767 3 7
+21574 2 4
+11110 3 2
+0 2 0
+21 3 0
+13474 3 3
+5449 1 4
+4 1 0
+55070 3 13
+32767 2 15
+27248 1 7
+31 3 0
+0 0 0
+32652 1 8
+2587 2 10
+4791 3 1
+44113 3 10
+65535 3 15
+7643 0 11
+27 0 11</dataString></testData></entry></elementAttributes><pos x="100" y="260"/></visualElement>
+  </visualElements>
+  <wires/>
+  <measurementOrdering/>
+</circuit>

@@ -1,0 +1,3 @@
+# The teacher owns everything; students own their package files through the
+# registry (checked by tools/ci/pr_gate.py), not through this file.
+* @nikhilkrajput

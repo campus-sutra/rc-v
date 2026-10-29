@@ -1,0 +1,5 @@
+bit 11   = 0
+lui  imm = 00012345
+addi imm = 1656
+rebuilt  = 12345678
+check: OK

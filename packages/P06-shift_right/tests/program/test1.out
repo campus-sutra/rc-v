@@ -1,0 +1,3 @@
+N       = -20 (FFFFFFEC)
+N sra 1 = -10 (FFFFFFF6)
+N srl 1 = 2147483638 (7FFFFFF6)

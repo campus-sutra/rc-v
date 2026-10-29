@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<circuit>
+  <version>1</version>
+  <attributes/>
+  <visualElements>
+    <visualElement><elementName>Clock</elementName><elementAttributes><entry><string>Label</string><string>clk</string></entry><entry><string>Frequency</string><int>1</int></entry></elementAttributes><pos x="100" y="100"/></visualElement>
+    <visualElement><elementName>In</elementName><elementAttributes><entry><string>Label</string><string>rst</string></entry><entry><string>Bits</string><int>1</int></entry></elementAttributes><pos x="100" y="160"/></visualElement>
+    <visualElement><elementName>In</elementName><elementAttributes><entry><string>Label</string><string>en</string></entry><entry><string>Bits</string><int>1</int></entry></elementAttributes><pos x="100" y="220"/></visualElement>
+    <visualElement><elementName>In</elementName><elementAttributes><entry><string>Label</string><string>d</string></entry><entry><string>Bits</string><int>8</int></entry></elementAttributes><pos x="100" y="280"/></visualElement>
+    <visualElement><elementName>Out</elementName><elementAttributes><entry><string>Label</string><string>q</string></entry><entry><string>Bits</string><int>8</int></entry></elementAttributes><pos x="900" y="100"/></visualElement>
+    <visualElement><elementName>Text</elementName><elementAttributes><entry><string>Description</string><string>P14 Program counter register - Digital task
+8-bit version from D flip-flops with a 2-to-1 hold/load choice built from gates.
+Allowed parts: gates + D_FF, JK_FF, T_FF, RS_FF
+Do not rename, move or delete the input and output pins.</string></entry></elementAttributes><pos x="100" y="40"/></visualElement>
+    <visualElement><elementName>Testcase</elementName><elementAttributes><entry><string>Label</string><string>public tests</string></entry><entry><string>Testdata</string><testData><dataString>clk rst en d q
+C 1 0 24 0
+C 0 0 55 0
+C 0 1 128 128
+C 0 1 255 255
+C 0 0 4 255
+C 0 0 161 255
+C 1 1 74 0
+C 0 1 0 0
+C 0 0 246 0
+C 0 0 4 0
+C 0 0 105 0
+C 0 0 0 0
+C 0 0 12 0
+C 0 1 185 185
+C 0 0 127 185
+C 0 1 29 29
+C 0 1 61 61
+C 0 0 97 61
+C 0 1 237 237
+C 0 1 99 99
+C 0 0 232 99
+C 0 1 255 255
+C 0 0 13 255
+C 0 0 17 255
+C 0 1 9 9
+C 0 0 232 9
+C 0 0 0 9
+C 0 1 2 2
+C 0 1 18 18
+C 0 1 255 255
+C 0 0 141 255
+C 1 0 191 0
+C 0 1 167 167
+C 0 1 196 196
+C 0 0 0 196
+C 0 0 128 196
+C 0 1 3 3
+C 0 0 255 3
+C 0 1 128 128
+C 0 0 180 128
+C 0 1 19 19
+C 0 0 255 19
+C 0 0 127 19
+C 0 1 18 18
+C 0 1 121 121
+C 0 0 8 121
+C 0 0 21 121
+C 0 0 127 121
+C 0 1 127 127
+C 0 0 127 127
+C 0 0 116 127
+C 0 0 62 127
+C 0 1 0 0
+C 0 0 173 0
+C 0 0 51 0
+C 0 0 5 0
+C 0 1 24 24
+C 0 1 183 183
+C 0 1 13 13
+C 0 1 128 128
+C 0 1 11 11
+C 0 0 189 11
+C 0 0 24 11
+C 0 1 124 124
+C 0 1 222 222
+C 0 0 255 222
+C 0 0 96 222
+C 0 1 107 107
+C 0 0 111 107
+C 0 0 0 107
+C 0 1 29 29
+C 0 1 156 156
+C 0 1 40 40
+C 0 1 128 128
+C 0 0 0 128
+C 0 1 0 0
+C 0 1 127 127
+C 0 0 128 127
+C 0 1 231 231
+C 0 1 21 21
+C 0 1 83 83
+C 0 1 16 16
+C 0 0 3 16
+C 0 1 74 74
+C 0 0 31 74
+C 0 0 19 74
+C 0 0 127 74
+C 0 0 255 74
+C 0 0 127 74
+C 0 1 9 9
+C 0 0 199 9
+C 0 0 239 9
+C 0 1 7 7
+C 0 1 253 253
+C 0 0 226 253
+C 0 0 72 253
+C 0 0 11 253
+C 0 0 8 253
+C 0 0 255 253
+C 0 1 23 23
+C 0 0 138 23
+C 0 0 28 23
+C 0 1 217 217
+C 0 0 69 217
+C 0 0 176 217
+C 0 1 183 183
+C 0 1 255 255
+C 0 0 17 255
+C 0 0 31 255
+C 0 0 13 255
+C 0 0 0 255
+C 0 1 171 171
+C 0 1 189 189
+C 0 1 88 88
+C 0 1 60 60
+C 0 0 0 60
+C 0 0 210 60
+C 0 0 213 60
+C 0 0 87 60
+C 0 0 91 60
+C 0 1 218 218
+C 0 0 100 218
+C 0 1 127 127
+C 0 0 205 127
+C 0 1 3 3
+C 0 1 253 253
+C 0 0 18 253
+C 0 0 5 253
+C 0 0 203 253
+C 0 0 255 253
+C 0 0 0 253
+C 0 1 123 123
+C 0 1 189 189
+C 0 1 250 250
+C 0 0 127 250
+C 0 0 128 250
+C 0 0 8 250
+C 0 0 0 250
+C 0 0 128 250
+C 0 0 84 250
+C 0 0 1 250
+C 0 1 255 255
+C 0 1 96 96
+C 0 1 127 127
+C 0 1 24 24
+C 0 1 0 0
+C 0 1 181 181
+C 0 1 127 127
+C 0 1 0 0
+C 0 1 155 155
+C 0 1 111 111
+C 0 0 24 111
+C 1 1 214 0
+C 0 1 161 161
+C 0 0 20 161
+C 0 1 5 5
+C 1 0 128 0
+C 0 0 23 0
+C 0 0 184 0
+C 0 0 154 0</dataString></testData></entry></elementAttributes><pos x="100" y="380"/></visualElement>
+  </visualElements>
+  <wires/>
+  <measurementOrdering/>
+</circuit>

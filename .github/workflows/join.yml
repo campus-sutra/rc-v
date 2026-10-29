@@ -1,0 +1,63 @@
+# A student opens a "Join RC-V" issue with their join code; this gives them
+# their package and records it on the `registry` branch.
+name: join
+
+on:
+  issues:
+    types: [opened, edited, reopened]
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: join          # one at a time, so two students cannot take the same package
+
+jobs:
+  join:
+    if: contains(github.event.issue.labels.*.name, 'join')
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Read the registry
+        run: |
+          git fetch -q origin registry && git worktree add -q /tmp/registry origin/registry \
+            || { git worktree add -q --orphan -b registry /tmp/registry && echo '{}' > /tmp/registry/members.json; }
+
+      - name: Join
+        id: join
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          ISSUE_USER: ${{ github.event.issue.user.login }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          REPO: ${{ github.repository }}
+        run: python3 tools/ci/join.py /tmp/registry/members.json shared/join_codes.json > /tmp/result.json && cat /tmp/result.json
+
+      - name: Save the registry
+        run: |
+          cd /tmp/registry
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "rc-v bot"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add members.json
+            git commit -q -m "join: ${{ github.event.issue.user.login }}"
+            git push -q origin HEAD:registry
+          fi
+
+      - name: Answer
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          N=${{ github.event.issue.number }}
+          python3 -c "import json;print(json.load(open('/tmp/result.json'))['message'])" > msg.md
+          gh issue comment $N --body-file msg.md
+          OK=$(python3 -c "import json;print(json.load(open('/tmp/result.json'))['ok'])")
+          if [ "$OK" = "True" ]; then
+            TITLE=$(python3 -c "import json;print(json.load(open('/tmp/result.json'))['title'])")
+            LABEL=$(python3 -c "import json;print(json.load(open('/tmp/result.json'))['label'])")
+            gh label create "$LABEL" --color 0E8A16 2>/dev/null || true
+            gh issue edit $N --title "$TITLE" --add-label "$LABEL" --add-label joined --remove-label join
+          fi

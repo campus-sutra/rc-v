@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<circuit>
+  <version>1</version>
+  <attributes/>
+  <visualElements>
+    <visualElement><elementName>Testcase</elementName><elementAttributes><entry><string>Label</string><string>public tests</string></entry><entry><string>Testdata</string><testData><dataString>op_hi ctrl
+0 21632
+1 0
+2 0
+3 0
+4 20480
+5 28720
+6 0
+7 0
+8 4624
+9 0
+10 0
+11 0
+12 16384
+13 22576
+14 0
+15 0
+16 0
+17 0
+18 0
+19 0
+20 0
+21 0
+22 0
+23 0
+24 40
+25 20738
+26 0
+27 16708
+28 16769
+29 0
+30 0
+31 0</dataString></testData></entry></elementAttributes><pos x="0" y="0"/></visualElement>
+  </visualElements>
+  <wires/>
+  <measurementOrdering/>
+</circuit>

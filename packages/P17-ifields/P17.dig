@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<circuit>
+  <version>1</version>
+  <attributes/>
+  <visualElements>
+    <visualElement><elementName>In</elementName><elementAttributes><entry><string>Label</string><string>instr</string></entry><entry><string>Bits</string><int>32</int></entry></elementAttributes><pos x="100" y="100"/></visualElement>
+    <visualElement><elementName>Out</elementName><elementAttributes><entry><string>Label</string><string>opcode</string></entry><entry><string>Bits</string><int>7</int></entry></elementAttributes><pos x="900" y="100"/></visualElement>
+    <visualElement><elementName>Out</elementName><elementAttributes><entry><string>Label</string><string>rd</string></entry><entry><string>Bits</string><int>5</int></entry></elementAttributes><pos x="900" y="160"/></visualElement>
+    <visualElement><elementName>Out</elementName><elementAttributes><entry><string>Label</string><string>funct3</string></entry><entry><string>Bits</string><int>3</int></entry></elementAttributes><pos x="900" y="220"/></visualElement>
+    <visualElement><elementName>Out</elementName><elementAttributes><entry><string>Label</string><string>rs1</string></entry><entry><string>Bits</string><int>5</int></entry></elementAttributes><pos x="900" y="280"/></visualElement>
+    <visualElement><elementName>Out</elementName><elementAttributes><entry><string>Label</string><string>rs2</string></entry><entry><string>Bits</string><int>5</int></entry></elementAttributes><pos x="900" y="340"/></visualElement>
+    <visualElement><elementName>Out</elementName><elementAttributes><entry><string>Label</string><string>funct7</string></entry><entry><string>Bits</string><int>7</int></entry></elementAttributes><pos x="900" y="400"/></visualElement>
+    <visualElement><elementName>Out</elementName><elementAttributes><entry><string>Label</string><string>csr</string></entry><entry><string>Bits</string><int>12</int></entry></elementAttributes><pos x="900" y="460"/></visualElement>
+    <visualElement><elementName>Text</elementName><elementAttributes><entry><string>Description</string><string>P17 Instruction field splitter - Digital task
+Full size, Splitters only. Label every field.
+Allowed parts: Splitter, Tunnel, Const, Ground, VDD, Text, In, Out, Clock
+Do not rename, move or delete the input and output pins.</string></entry></elementAttributes><pos x="100" y="40"/></visualElement>
+    <visualElement><elementName>Testcase</elementName><elementAttributes><entry><string>Label</string><string>public tests</string></entry><entry><string>Testdata</string><testData><dataString>instr opcode rd funct3 rs1 rs2 funct7 csr
+529526489 89 29 6 31 24 15 504
+0 0 0 0 0 0 0 0
+2147483648 0 0 0 0 0 64 2048
+19 19 0 0 0 0 0 0
+2147483648 0 0 0 0 0 64 2048
+2147483648 0 0 0 0 0 64 2048
+2147483647 127 31 7 31 31 63 2047
+29 29 0 0 0 0 0 0
+3271889901 109 7 1 10 16 97 3120
+2294702 46 7 0 6 2 0 2
+15 15 0 0 0 0 0 0
+536934352 80 15 7 1 0 16 512
+988559964 92 20 3 24 14 29 942
+3788220109 77 13 2 23 28 112 3612
+2523461084 92 11 7 17 6 75 2406
+2147483648 0 0 0 0 0 64 2048
+2147483648 0 0 0 0 0 64 2048
+4294967295 127 31 7 31 31 127 4095
+468863526 38 20 4 4 31 13 447
+0 0 0 0 0 0 0 0
+2384511532 44 4 4 1 2 71 2274
+2147483647 127 31 7 31 31 63 2047
+1509614529 65 7 6 21 31 44 1439
+4146669994 42 19 2 18 18 123 3954
+388365880 56 28 7 11 18 11 370
+29 29 0 0 0 0 0 0
+1411714545 113 27 0 10 2 42 1346
+4294967295 127 31 7 31 31 127 4095
+20 20 0 0 0 0 0 0
+4294967295 127 31 7 31 31 127 4095
+17 17 0 0 0 0 0 0
+2633011896 56 5 1 1 15 78 2511
+1839423408 48 31 5 6 26 54 1754
+2147483647 127 31 7 31 31 63 2047
+2604749483 43 5 5 2 20 77 2484
+20 20 0 0 0 0 0 0
+2147483648 0 0 0 0 0 64 2048
+4294967295 127 31 7 31 31 127 4095
+4294967295 127 31 7 31 31 127 4095
+2147483647 127 31 7 31 31 63 2047
+2147483648 0 0 0 0 0 64 2048
+2147483648 0 0 0 0 0 64 2048
+2147483648 0 0 0 0 0 64 2048
+7 7 0 0 0 0 0 0
+4294967295 127 31 7 31 31 127 4095
+2147483648 0 0 0 0 0 64 2048
+1635144211 19 4 5 12 23 48 1559
+1851918950 102 20 0 4 6 55 1766
+3 3 0 0 0 0 0 0
+16 16 0 0 0 0 0 0
+0 0 0 0 0 0 0 0
+18560627 115 12 3 22 17 0 17
+27 27 0 0 0 0 0 0
+0 0 0 0 0 0 0 0
+4294967295 127 31 7 31 31 127 4095
+3646385159 7 24 6 14 21 108 3477
+30 30 0 0 0 0 0 0
+1726489119 31 4 2 16 14 51 1646
+2147483648 0 0 0 0 0 64 2048
+2147483647 127 31 7 31 31 63 2047
+0 0 0 0 0 0 0 0
+1225132412 124 18 0 12 16 36 1168
+3832567096 56 10 5 0 7 114 3655
+0 0 0 0 0 0 0 0
+2780894972 124 13 1 2 28 82 2652
+0 0 0 0 0 0 0 0
+9 9 0 0 0 0 0 0
+11 11 0 0 0 0 0 0
+1151550277 69 6 4 6 10 34 1098
+31 31 0 0 0 0 0 0
+2147483647 127 31 7 31 31 63 2047
+2147483648 0 0 0 0 0 64 2048
+2147483648 0 0 0 0 0 64 2048
+25 25 0 0 0 0 0 0
+100530467 35 18 7 27 31 2 95
+2029885706 10 18 1 27 15 60 1935
+1668377647 47 24 6 2 23 49 1591
+1737966685 93 8 4 14 25 51 1657
+3716477762 66 6 7 9 24 110 3544
+1814343766 86 0 3 9 2 54 1730
+3 3 0 0 0 0 0 0
+4127062746 90 21 7 27 31 122 3935
+2911286856 72 12 3 13 24 86 2776
+1972251852 76 25 2 28 24 58 1880
+1 1 0 0 0 0 0 0
+0 0 0 0 0 0 0 0
+4294967295 127 31 7 31 31 127 4095
+162724825 89 23 7 5 27 4 155
+4294967295 127 31 7 31 31 127 4095
+29 29 0 0 0 0 0 0
+109005097 41 18 4 30 7 3 103
+3054544857 89 15 2 1 1 91 2913
+1385584326 70 13 5 12 9 41 1321
+3609729183 31 17 1 16 18 107 3442
+2147483648 0 0 0 0 0 64 2048
+2147483648 0 0 0 0 0 64 2048
+3111086197 117 16 6 30 22 92 2966
+4294967295 127 31 7 31 31 127 4095
+4241264224 96 28 0 25 12 126 4044
+11 11 0 0 0 0 0 0
+1992085478 102 31 4 25 11 59 1899
+0 0 0 0 0 0 0 0
+392810379 11 31 4 19 22 11 374
+216350357 21 29 3 10 14 6 206
+477264030 30 17 7 4 7 14 455
+3708364554 10 14 2 18 16 110 3536
+2119586290 114 3 5 12 5 63 2021
+0 0 0 0 0 0 0 0
+12 12 0 0 0 0 0 0
+883713279 127 9 6 24 10 26 842
+2147483648 0 0 0 0 0 64 2048
+182920219 27 8 2 14 14 5 174
+72277304 56 26 5 29 4 2 68
+2908281049 89 17 5 17 21 86 2773
+793937372 92 11 0 5 21 23 757
+2324809206 118 11 4 3 9 69 2217
+5 5 0 0 0 0 0 0
+4294967295 127 31 7 31 31 127 4095
+4031551650 34 17 1 25 4 120 3844
+21 21 0 0 0 0 0 0
+2147483648 0 0 0 0 0 64 2048
+513652733 125 15 3 27 9 15 489
+4196704032 32 30 1 9 2 125 4002
+26 26 0 0 0 0 0 0
+1648503136 96 18 2 4 4 49 1572
+3257954683 123 2 7 0 3 97 3107
+0 0 0 0 0 0 0 0
+1381868644 100 8 2 27 5 41 1317
+0 0 0 0 0 0 0 0
+2147483647 127 31 7 31 31 63 2047
+2756599149 109 26 5 28 4 82 2628
+681181517 77 2 0 20 9 20 649
+27 27 0 0 0 0 0 0
+4201217943 23 31 7 18 6 125 4006
+1519959009 97 23 3 17 9 45 1449
+3080655581 93 5 1 30 25 91 2937
+2720487771 91 18 5 14 2 81 2594
+3583479949 13 1 1 15 25 106 3417
+3797281333 53 20 6 11 5 113 3621
+21 21 0 0 0 0 0 0
+2960803084 12 10 4 20 7 88 2823
+1516325376 0 20 4 2 6 45 1446
+3449052448 32 26 5 8 25 102 3289
+0 0 0 0 0 0 0 0
+13 13 0 0 0 0 0 0
+2257544790 86 12 6 30 8 67 2152
+5 5 0 0 0 0 0 0
+4294967295 127 31 7 31 31 127 4095
+1075093812 52 2 2 9 1 32 1025
+0 0 0 0 0 0 0 0
+1011842390 86 26 7 30 4 30 964
+4112752211 83 28 1 7 18 122 3922
+1212937643 43 11 7 23 4 36 1156
+544036916 52 16 5 26 6 16 518
+1559832141 77 12 2 18 15 46 1487
+24 24 0 0 0 0 0 0
+326556173 13 20 5 13 23 9 311
+12 12 0 0 0 0 0 0
+2368335076 100 25 6 19 18 70 2258
+0 0 0 0 0 0 0 0</dataString></testData></entry></elementAttributes><pos x="100" y="560"/></visualElement>
+  </visualElements>
+  <wires/>
+  <measurementOrdering/>
+</circuit>

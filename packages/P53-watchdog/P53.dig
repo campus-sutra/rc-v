@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<circuit>
+  <version>1</version>
+  <attributes/>
+  <visualElements>
+    <visualElement><elementName>Clock</elementName><elementAttributes><entry><string>Label</string><string>clk</string></entry><entry><string>Frequency</string><int>1</int></entry></elementAttributes><pos x="100" y="100"/></visualElement>
+    <visualElement><elementName>In</elementName><elementAttributes><entry><string>Label</string><string>rst</string></entry><entry><string>Bits</string><int>1</int></entry></elementAttributes><pos x="100" y="160"/></visualElement>
+    <visualElement><elementName>In</elementName><elementAttributes><entry><string>Label</string><string>en</string></entry><entry><string>Bits</string><int>1</int></entry></elementAttributes><pos x="100" y="220"/></visualElement>
+    <visualElement><elementName>In</elementName><elementAttributes><entry><string>Label</string><string>kick</string></entry><entry><string>Bits</string><int>1</int></entry></elementAttributes><pos x="100" y="280"/></visualElement>
+    <visualElement><elementName>In</elementName><elementAttributes><entry><string>Label</string><string>load</string></entry><entry><string>Bits</string><int>8</int></entry></elementAttributes><pos x="100" y="340"/></visualElement>
+    <visualElement><elementName>Out</elementName><elementAttributes><entry><string>Label</string><string>count</string></entry><entry><string>Bits</string><int>8</int></entry></elementAttributes><pos x="900" y="100"/></visualElement>
+    <visualElement><elementName>Out</elementName><elementAttributes><entry><string>Label</string><string>bite</string></entry><entry><string>Bits</string><int>1</int></entry></elementAttributes><pos x="900" y="160"/></visualElement>
+    <visualElement><elementName>Text</elementName><elementAttributes><entry><string>Description</string><string>P53 Watchdog timer - Digital task
+8-bit down counter with reload and the sticky bite flag.
+Allowed parts: all of the above + Add, Sub, Comparator, Neg
+Do not rename, move or delete the input and output pins.</string></entry></elementAttributes><pos x="100" y="40"/></visualElement>
+    <visualElement><elementName>Testcase</elementName><elementAttributes><entry><string>Label</string><string>public tests</string></entry><entry><string>Testdata</string><testData><dataString>clk rst en kick load count bite
+C 1 1 1 243 0 0
+C 0 1 1 84 84 0
+C 0 1 0 254 83 0
+C 0 1 1 40 40 0
+C 0 1 1 209 209 0
+C 0 0 0 8 209 0
+C 0 0 0 109 209 0
+C 0 1 1 0 0 0
+C 0 0 0 0 0 0
+C 0 1 0 127 127 1
+C 0 0 1 26 26 1
+C 0 0 1 12 12 1
+C 0 1 1 31 31 1
+C 0 0 0 222 31 1
+C 0 1 1 127 127 1
+C 0 1 0 0 126 1
+C 0 1 1 203 203 1
+C 0 0 1 0 0 1
+C 0 1 1 26 26 1
+C 0 0 1 28 28 1
+C 0 0 0 0 28 1
+C 0 1 1 138 138 1
+C 0 0 0 150 138 1
+C 1 1 1 31 0 0
+C 0 1 0 89 89 1
+C 0 0 0 2 89 1
+C 0 0 1 209 209 1
+C 0 0 1 223 223 1
+C 0 1 1 239 239 1
+C 0 0 1 0 0 1
+C 0 1 0 67 67 1
+C 0 0 1 94 94 1
+C 0 0 1 252 252 1
+C 0 0 0 0 252 1
+C 0 1 0 113 251 1
+C 0 1 1 5 5 1
+C 0 1 0 158 4 1
+C 0 1 1 128 128 1
+C 0 0 1 128 128 1
+C 0 0 0 147 128 1
+C 0 1 1 127 127 1
+C 0 1 1 16 16 1
+C 0 0 0 164 16 1
+C 0 0 0 31 16 1
+C 0 0 0 0 16 1
+C 0 0 0 147 16 1
+C 0 0 0 11 16 1
+C 0 0 0 11 16 1
+C 0 0 0 215 16 1
+C 0 1 0 127 15 1
+C 0 0 0 1 15 1
+C 0 0 0 6 15 1
+C 0 1 0 101 14 1
+C 0 1 0 7 13 1
+C 0 1 0 139 12 1
+C 0 0 1 255 255 1
+C 0 1 1 16 16 1
+C 0 1 1 99 99 1
+C 0 1 0 76 98 1
+C 0 1 1 10 10 1
+C 0 0 0 19 10 1
+C 0 0 1 233 233 1
+C 0 0 0 107 233 1
+C 0 0 0 127 233 1
+C 0 0 1 241 241 1
+C 0 0 1 255 255 1
+C 0 0 1 147 147 1
+C 0 1 0 75 146 1
+C 0 0 0 71 146 1
+C 0 1 1 255 255 1
+C 0 0 1 127 127 1
+C 0 0 0 28 127 1
+C 0 0 0 128 127 1
+C 0 1 0 35 126 1
+C 0 1 1 0 0 1
+C 0 0 1 128 128 1
+C 0 1 0 128 127 1
+C 0 1 1 151 151 1
+C 0 1 0 3 150 1
+C 0 0 1 249 249 1
+C 0 1 0 174 248 1
+C 0 0 1 48 48 1
+C 0 0 0 153 48 1
+C 0 0 0 21 48 1
+C 0 0 0 255 48 1
+C 0 0 0 253 48 1
+C 0 1 0 16 47 1
+C 0 0 0 255 47 1
+C 0 1 0 12 46 1
+C 0 0 0 60 46 1
+C 0 1 1 128 128 1
+C 0 0 0 243 128 1
+C 0 0 0 0 128 1
+C 0 1 1 119 119 1
+C 0 1 0 129 118 1
+C 0 0 0 74 118 1
+C 0 0 1 247 247 1
+C 0 1 1 5 5 1
+C 0 0 1 0 0 1
+C 0 0 0 21 0 1
+C 0 1 1 56 56 1
+C 0 0 1 0 0 1
+C 0 1 0 0 0 1
+C 0 0 1 42 42 1
+C 1 0 1 255 0 0
+C 0 1 0 255 255 1
+C 0 1 0 20 254 1
+C 0 0 1 128 128 1
+C 0 0 1 7 7 1
+C 0 1 1 128 128 1
+C 0 1 1 255 255 1
+C 0 0 0 15 255 1
+C 0 0 1 11 11 1
+C 0 1 1 104 104 1
+C 0 1 0 23 103 1
+C 0 0 0 178 103 1
+C 0 1 0 127 102 1
+C 0 0 1 19 19 1
+C 0 1 1 127 127 1
+C 0 0 1 7 7 1
+C 0 0 0 0 7 1
+C 0 1 0 0 6 1
+C 0 0 1 26 26 1
+C 0 1 1 128 128 1
+C 0 0 0 0 128 1
+C 0 0 1 68 68 1
+C 0 1 1 217 217 1
+C 0 1 0 92 216 1
+C 0 0 0 20 216 1
+C 0 1 1 156 156 1
+C 0 1 1 18 18 1
+C 0 1 0 31 17 1
+C 0 0 0 0 17 1
+C 0 1 1 95 95 1
+C 0 0 0 112 95 1
+C 0 1 0 142 94 1
+C 0 1 0 26 93 1
+C 0 0 1 125 125 1
+C 0 0 1 58 58 1
+C 0 0 0 31 58 1
+C 0 0 1 127 127 1
+C 0 1 0 0 126 1
+C 0 1 1 255 255 1
+C 0 1 1 71 71 1
+C 0 1 0 2 70 1
+C 0 0 1 33 33 1
+C 0 1 0 15 32 1
+C 0 0 0 1 32 1
+C 0 0 0 72 32 1
+C 0 0 1 62 62 1
+C 0 1 0 9 61 1
+C 0 0 1 20 20 1
+C 0 0 0 11 20 1
+C 0 0 1 158 158 1
+C 0 1 1 197 197 1
+C 0 1 1 18 18 1
+C 0 0 0 198 18 1
+C 0 1 1 232 232 1
+C 0 1 0 145 231 1
+C 0 0 1 9 9 1</dataString></testData></entry></elementAttributes><pos x="100" y="440"/></visualElement>
+  </visualElements>
+  <wires/>
+  <measurementOrdering/>
+</circuit>

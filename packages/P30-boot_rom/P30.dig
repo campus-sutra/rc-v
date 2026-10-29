@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<circuit>
+  <version>1</version>
+  <attributes/>
+  <visualElements>
+    <visualElement><elementName>In</elementName><elementAttributes><entry><string>Label</string><string>addr</string></entry><entry><string>Bits</string><int>4</int></entry></elementAttributes><pos x="100" y="100"/></visualElement>
+    <visualElement><elementName>Out</elementName><elementAttributes><entry><string>Label</string><string>data</string></entry><entry><string>Bits</string><int>32</int></entry></elementAttributes><pos x="900" y="100"/></visualElement>
+    <visualElement><elementName>Text</elementName><elementAttributes><entry><string>Description</string><string>P30 Boot ROM - Digital task
+A ROM part holding the first 16 words of the start-up program sw/lib/crt0.s. You assemble the program and type the machine code in yourself.
+Allowed parts: gates + multiplexer/decoder parts + ROM
+Do not rename, move or delete the input and output pins.</string></entry></elementAttributes><pos x="100" y="40"/></visualElement>
+    <visualElement><elementName>Testcase</elementName><elementAttributes><entry><string>Label</string><string>public tests</string></entry><entry><string>Testdata</string><testData><dataString>addr data
+0 82231
+1 65811
+2 695
+3 42107539
+4 810717299
+5 131767
+6 1006797459
+7 172067
+8 4194415
+9 1335
+10 117769491
+11 146800879
+12 874521971
+13 490733807
+14 1335
+15 132449555</dataString></testData></entry></elementAttributes><pos x="100" y="200"/></visualElement>
+  </visualElements>
+  <wires/>
+  <measurementOrdering/>
+</circuit>

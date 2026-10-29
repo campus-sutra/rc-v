@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<circuit>
+  <version>1</version>
+  <attributes/>
+  <visualElements>
+    <visualElement><elementName>Clock</elementName><elementAttributes><entry><string>Label</string><string>clk</string></entry><entry><string>Frequency</string><int>1</int></entry></elementAttributes><pos x="100" y="100"/></visualElement>
+    <visualElement><elementName>In</elementName><elementAttributes><entry><string>Label</string><string>rst</string></entry><entry><string>Bits</string><int>1</int></entry></elementAttributes><pos x="100" y="160"/></visualElement>
+    <visualElement><elementName>In</elementName><elementAttributes><entry><string>Label</string><string>value</string></entry><entry><string>Bits</string><int>16</int></entry></elementAttributes><pos x="100" y="220"/></visualElement>
+    <visualElement><elementName>Out</elementName><elementAttributes><entry><string>Label</string><string>digit</string></entry><entry><string>Bits</string><int>4</int></entry></elementAttributes><pos x="900" y="100"/></visualElement>
+    <visualElement><elementName>Out</elementName><elementAttributes><entry><string>Label</string><string>anode</string></entry><entry><string>Bits</string><int>4</int></entry></elementAttributes><pos x="900" y="160"/></visualElement>
+    <visualElement><elementName>Text</elementName><elementAttributes><entry><string>Description</string><string>P45 Hex display scanner - Digital task
+4 digits: a 2-bit counter, a 2-to-4 decoder for the anodes and a multiplexer for the nibble.
+Allowed parts: gates + multiplexer/decoder parts + flip-flops
+Do not rename, move or delete the input and output pins.</string></entry></elementAttributes><pos x="100" y="40"/></visualElement>
+    <visualElement><elementName>Testcase</elementName><elementAttributes><entry><string>Label</string><string>public tests</string></entry><entry><string>Testdata</string><testData><dataString>clk rst value digit anode
+C 1 0 0 1
+C 0 32768 0 2
+C 0 0 0 4
+C 0 17 0 8
+C 0 19 3 1
+C 0 0 0 2
+C 0 65535 15 4
+C 0 30617 7 8
+C 0 15148 12 1
+C 0 32767 15 2
+C 0 48391 13 4
+C 0 48576 11 8
+C 0 19184 0 1
+C 0 23 1 2
+C 0 15 0 4
+C 0 34790 8 8
+C 0 2 2 1
+C 0 33253 14 2
+C 0 32767 15 4
+C 0 4921 1 8
+C 0 62097 1 1
+C 1 2 2 1
+C 0 6076 11 2
+C 0 32767 15 4
+C 0 30849 7 8
+C 1 9081 9 1
+C 0 32767 15 2
+C 0 27783 12 4
+C 0 49704 12 8
+C 0 6016 0 1
+C 0 65535 15 2
+C 0 19010 10 4
+C 0 10040 2 8
+C 0 58600 8 1
+C 0 22930 9 2
+C 0 1091 4 4
+C 0 0 0 8
+C 0 9 9 1
+C 0 45970 9 2
+C 0 12 0 4
+C 0 42438 10 8
+C 0 47181 13 1
+C 0 12866 4 2
+C 0 65535 15 4
+C 1 27177 9 1
+C 0 6 0 2
+C 0 42774 7 4
+C 0 19 0 8
+C 0 8757 5 1
+C 0 57693 5 2
+C 0 49989 3 4
+C 1 135 7 1
+C 0 62314 6 2
+C 0 9325 4 4
+C 0 56155 13 8
+C 0 20810 10 1
+C 0 50623 11 2
+C 0 32768 0 4
+C 0 60605 14 8
+C 0 63858 2 1
+C 0 31 1 2
+C 0 30 0 4
+C 0 16549 4 8
+C 0 0 0 1
+C 0 23 1 2
+C 0 8909 2 4
+C 0 30 0 8
+C 1 49974 6 1
+C 0 0 0 2
+C 0 22416 7 4
+C 0 0 0 8
+C 0 32768 0 1
+C 0 40397 12 2
+C 0 32767 15 4
+C 0 9 0 8
+C 0 32768 0 1
+C 0 15978 6 2
+C 0 2 0 4
+C 0 12 0 8
+C 0 1960 8 1
+C 0 17860 12 2
+C 0 43367 9 4
+C 0 35056 8 8
+C 1 32767 15 1
+C 0 32768 0 2
+C 0 11 0 4
+C 0 6 0 8
+C 0 51718 6 1
+C 0 21080 5 2
+C 0 24846 1 4
+C 0 27981 6 8
+C 0 4954 10 1
+C 0 65535 15 2
+C 0 29766 4 4
+C 0 19862 4 8
+C 0 60214 6 1
+C 0 23133 5 2
+C 0 50921 6 4
+C 0 26166 6 8
+C 0 0 0 1
+C 0 57393 3 2
+C 0 12 0 4
+C 1 65348 4 1
+C 0 17121 14 2
+C 0 28423 15 4
+C 0 10464 2 8
+C 0 20392 8 1
+C 0 10915 10 2
+C 0 32768 0 4
+C 0 10 0 8
+C 0 32768 0 1
+C 0 4937 4 2
+C 0 32768 0 4
+C 0 0 0 8
+C 0 16 0 1
+C 0 37283 10 2
+C 0 45049 15 4
+C 0 32767 7 8
+C 0 1 1 1
+C 0 8497 3 2
+C 0 40504 14 4
+C 0 0 0 8
+C 0 24174 14 1
+C 0 29640 12 2
+C 0 32015 13 4
+C 0 43393 10 8
+C 0 32767 15 1
+C 0 32768 0 2
+C 0 56236 11 4
+C 0 2004 0 8
+C 0 24665 9 1
+C 0 65517 14 2
+C 0 32767 15 4
+C 0 40113 9 8
+C 0 7 7 1
+C 0 27513 7 2
+C 0 10748 9 4
+C 0 65535 15 8
+C 0 12928 0 1
+C 0 44019 15 2
+C 0 23 0 4
+C 0 65535 15 8
+C 0 25754 10 1
+C 0 32767 15 2
+C 0 11828 14 4
+C 0 32768 8 8
+C 0 2 2 1
+C 0 23757 12 2
+C 0 0 0 4
+C 0 32768 8 8
+C 0 52484 4 1
+C 0 42841 5 2
+C 0 20 0 4
+C 0 65535 15 8
+C 0 32767 15 1
+C 0 13792 14 2
+C 0 41102 0 4
+C 0 0 0 8
+C 0 63900 12 1
+C 0 16908 0 2</dataString></testData></entry></elementAttributes><pos x="100" y="320"/></visualElement>
+  </visualElements>
+  <wires/>
+  <measurementOrdering/>
+</circuit>

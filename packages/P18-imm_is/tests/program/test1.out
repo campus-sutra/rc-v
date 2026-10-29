@@ -1,0 +1,4 @@
+sign-extended: FFFFF800 (-2048)
+zero-extended: 00000800 (2048)
+lb:  -1
+lbu: 255

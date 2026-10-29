@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<circuit>
+  <version>1</version>
+  <attributes/>
+  <visualElements>
+    <visualElement><elementName>In</elementName><elementAttributes><entry><string>Label</string><string>instr</string></entry><entry><string>Bits</string><int>32</int></entry></elementAttributes><pos x="100" y="100"/></visualElement>
+    <visualElement><elementName>Out</elementName><elementAttributes><entry><string>Label</string><string>is_lui</string></entry><entry><string>Bits</string><int>1</int></entry></elementAttributes><pos x="900" y="100"/></visualElement>
+    <visualElement><elementName>Out</elementName><elementAttributes><entry><string>Label</string><string>is_auipc</string></entry><entry><string>Bits</string><int>1</int></entry></elementAttributes><pos x="900" y="160"/></visualElement>
+    <visualElement><elementName>Out</elementName><elementAttributes><entry><string>Label</string><string>is_jal</string></entry><entry><string>Bits</string><int>1</int></entry></elementAttributes><pos x="900" y="220"/></visualElement>
+    <visualElement><elementName>Out</elementName><elementAttributes><entry><string>Label</string><string>is_jalr</string></entry><entry><string>Bits</string><int>1</int></entry></elementAttributes><pos x="900" y="280"/></visualElement>
+    <visualElement><elementName>Out</elementName><elementAttributes><entry><string>Label</string><string>is_branch</string></entry><entry><string>Bits</string><int>1</int></entry></elementAttributes><pos x="900" y="340"/></visualElement>
+    <visualElement><elementName>Out</elementName><elementAttributes><entry><string>Label</string><string>is_load</string></entry><entry><string>Bits</string><int>1</int></entry></elementAttributes><pos x="900" y="400"/></visualElement>
+    <visualElement><elementName>Out</elementName><elementAttributes><entry><string>Label</string><string>is_store</string></entry><entry><string>Bits</string><int>1</int></entry></elementAttributes><pos x="900" y="460"/></visualElement>
+    <visualElement><elementName>Out</elementName><elementAttributes><entry><string>Label</string><string>is_opimm</string></entry><entry><string>Bits</string><int>1</int></entry></elementAttributes><pos x="900" y="520"/></visualElement>
+    <visualElement><elementName>Out</elementName><elementAttributes><entry><string>Label</string><string>is_op</string></entry><entry><string>Bits</string><int>1</int></entry></elementAttributes><pos x="900" y="580"/></visualElement>
+    <visualElement><elementName>Out</elementName><elementAttributes><entry><string>Label</string><string>is_system</string></entry><entry><string>Bits</string><int>1</int></entry></elementAttributes><pos x="900" y="640"/></visualElement>
+    <visualElement><elementName>Out</elementName><elementAttributes><entry><string>Label</string><string>is_ecall</string></entry><entry><string>Bits</string><int>1</int></entry></elementAttributes><pos x="900" y="700"/></visualElement>
+    <visualElement><elementName>Out</elementName><elementAttributes><entry><string>Label</string><string>is_mret</string></entry><entry><string>Bits</string><int>1</int></entry></elementAttributes><pos x="900" y="760"/></visualElement>
+    <visualElement><elementName>Text</elementName><elementAttributes><entry><string>Description</string><string>P21 Opcode class decoder - Digital task
+Full size: AND gates with inverted inputs for each opcode; a Comparator with a Const is allowed for ECALL/MRET.
+Allowed parts: all of the above + Add, Sub, Comparator, Neg
+Do not rename, move or delete the input and output pins.</string></entry></elementAttributes><pos x="100" y="40"/></visualElement>
+    <visualElement><elementName>Testcase</elementName><elementAttributes><entry><string>Label</string><string>public tests</string></entry><entry><string>Testdata</string><testData><dataString>instr is_lui is_auipc is_jal is_jalr is_branch is_load is_store is_opimm is_op is_system is_ecall is_mret
+115 0 0 0 0 0 0 0 0 0 1 1 0
+15132211 0 0 0 0 0 0 0 0 1 0 0 0
+5452435 0 0 0 0 0 0 0 1 0 0 0 0
+3478803 0 0 0 0 0 0 0 1 0 0 0 0
+12656771 0 0 0 0 0 1 0 0 0 0 0 0
+4358375 0 0 0 1 0 0 0 0 0 0 0 0
+4358375 0 0 0 1 0 0 0 0 0 0 0 0
+18380723 0 0 0 0 0 0 0 0 1 0 0 0
+273678451 0 0 0 0 0 0 0 0 0 1 0 0
+32431667 0 0 0 0 0 0 0 0 1 0 0 0
+1048691 0 0 0 0 0 0 0 0 0 1 0 0
+1073750067 0 0 0 0 0 0 0 0 1 0 0 0
+3058015673 0 0 0 0 0 0 0 0 0 0 0 0
+1081497107 0 0 0 0 0 0 0 1 0 0 0 0
+32888211 0 0 0 0 0 0 0 1 0 0 0 0
+5452435 0 0 0 0 0 0 0 1 0 0 0 0
+305419575 1 0 0 0 0 0 0 0 0 0 0 0
+20483 0 0 0 0 0 1 0 0 0 0 0 0
+133588371 0 0 0 0 0 0 0 1 0 0 0 0
+22686131 0 0 0 0 0 0 0 0 1 0 0 0
+12323 0 0 0 0 0 0 1 0 0 0 0 0
+4294967295 0 0 0 0 0 0 0 0 0 0 0 0
+19174451 0 0 0 0 0 0 0 0 1 0 0 0
+4246240483 0 0 0 0 1 0 0 0 0 0 0 0
+1073750067 0 0 0 0 0 0 0 0 1 0 0 0
+15 0 0 0 0 0 0 0 0 0 0 0 0
+20483 0 0 0 0 0 1 0 0 0 0 0 0
+3212547 0 0 0 0 0 1 0 0 0 0 0 0
+5452435 0 0 0 0 0 0 0 1 0 0 0 0
+19 0 0 0 0 0 0 0 1 0 0 0 0
+4207 0 0 1 0 0 0 0 0 0 0 0 0
+3478803 0 0 0 0 0 0 0 1 0 0 0 0
+810750707 0 0 0 0 0 0 0 0 0 1 0 0
+4887 0 1 0 0 0 0 0 0 0 0 0 0
+1708998647 0 0 0 0 0 0 0 0 0 0 0 0
+4277626595 0 0 0 0 1 0 0 0 0 0 0 0
+12387 0 0 0 0 1 0 0 0 0 0 0 0
+1073745939 0 0 0 0 0 0 0 1 0 0 0 0
+4277626595 0 0 0 0 1 0 0 0 0 0 0 0
+22686131 0 0 0 0 0 0 0 0 1 0 0 0
+4207 0 0 1 0 0 0 0 0 0 0 0 0
+4241906403 0 0 0 0 1 0 0 0 0 0 0 0
+19 0 0 0 0 0 0 0 1 0 0 0 0
+15132211 0 0 0 0 0 0 0 0 1 0 0 0
+1081497107 0 0 0 0 0 0 0 1 0 0 0 0
+5452435 0 0 0 0 0 0 0 1 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0
+4358375 0 0 0 1 0 0 0 0 0 0 0 0
+239 0 0 1 0 0 0 0 0 0 0 0 0
+1769442379 0 0 0 0 0 0 0 0 0 0 0 0
+15132211 0 0 0 0 0 0 0 0 1 0 0 0
+3779918808 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0
+29183155 0 0 0 0 0 0 0 0 1 0 0 0
+1073745939 0 0 0 0 0 0 0 1 0 0 0 0
+15132211 0 0 0 0 0 0 0 0 1 0 0 0
+273678451 0 0 0 0 0 0 0 0 0 1 0 0
+4294198147 0 0 0 0 0 1 0 0 0 0 0 0
+16499 0 0 0 0 0 0 0 0 0 1 0 0
+1081497107 0 0 0 0 0 0 0 1 0 0 0 0
+19 0 0 0 0 0 0 0 1 0 0 0 0
+4358375 0 0 0 1 0 0 0 0 0 0 0 0
+239 0 0 1 0 0 0 0 0 0 0 0 0
+1085628339 0 0 0 0 0 0 0 0 1 0 0 0
+273678451 0 0 0 0 0 0 0 0 0 1 0 0
+1081497107 0 0 0 0 0 0 0 1 0 0 0 0
+1081279155 0 0 0 0 0 0 0 0 1 0 0 0
+4358375 0 0 0 1 0 0 0 0 0 0 0 0
+4289929875 0 0 0 0 0 0 0 1 0 0 0 0
+133588371 0 0 0 0 0 0 0 1 0 0 0 0
+4278255891 0 0 0 0 0 0 0 1 0 0 0 0
+2184066683 0 0 0 0 0 0 0 0 0 0 0 0
+25934643 0 0 0 0 0 0 0 0 1 0 0 0
+115 0 0 0 0 0 0 0 0 0 1 1 0
+4289929875 0 0 0 0 0 0 0 1 0 0 0 0
+4294198147 0 0 0 0 0 1 0 0 0 0 0 0
+4207 0 0 1 0 0 0 0 0 0 0 0 0
+1048691 0 0 0 0 0 0 0 0 0 1 0 0
+5452435 0 0 0 0 0 0 0 1 0 0 0 0
+12944691 0 0 0 0 0 0 0 0 1 0 0 0
+807403635 0 0 0 0 0 0 0 0 0 1 0 1
+305419575 1 0 0 0 0 0 0 0 0 0 0 0
+25934643 0 0 0 0 0 0 0 0 1 0 0 0
+4199 0 0 0 1 0 0 0 0 0 0 0 0
+4131 0 0 0 0 0 0 1 0 0 0 0 0
+4887 0 1 0 0 0 0 0 0 0 0 0 0
+4278255891 0 0 0 0 0 0 0 1 0 0 0 0
+807403635 0 0 0 0 0 0 0 0 0 1 0 1
+4294967295 0 0 0 0 0 0 0 0 0 0 0 0
+4273278179 0 0 0 0 1 0 0 0 0 0 0 0
+2521635589 0 0 0 0 0 0 0 0 0 0 0 0
+4199 0 0 0 1 0 0 0 0 0 0 0 0
+133588371 0 0 0 0 0 0 0 1 0 0 0 0
+805315955 0 0 0 0 0 0 0 0 0 1 0 0
+1081279155 0 0 0 0 0 0 0 0 1 0 0 0
+25934643 0 0 0 0 0 0 0 0 1 0 0 0
+1714914659 0 0 0 0 1 0 0 0 0 0 0 0
+789764128 0 0 0 0 0 0 0 0 0 0 0 0
+1737073815 0 1 0 0 0 0 0 0 0 0 0 0
+2918932415 0 0 0 0 0 0 0 0 0 0 0 0
+12323 0 0 0 0 0 0 1 0 0 0 0 0
+1081279155 0 0 0 0 0 0 0 0 1 0 0 0
+19174451 0 0 0 0 0 0 0 0 1 0 0 0
+2031299090 0 0 0 0 0 0 0 0 0 0 0 0
+32431667 0 0 0 0 0 0 0 0 1 0 0 0
+4294198147 0 0 0 0 0 1 0 0 0 0 0 0
+4261581539 0 0 0 0 1 0 0 0 0 0 0 0
+4294198147 0 0 0 0 0 1 0 0 0 0 0 0
+273678451 0 0 0 0 0 0 0 0 0 1 0 0
+4294264083 0 0 0 0 0 0 0 1 0 0 0 0
+12323 0 0 0 0 0 0 1 0 0 0 0 0
+12323 0 0 0 0 0 0 1 0 0 0 0 0
+1199884931 0 0 0 0 0 1 0 0 0 0 0 0
+4246240483 0 0 0 0 1 0 0 0 0 0 0 0
+4246240483 0 0 0 0 1 0 0 0 0 0 0 0
+2105859501 0 0 0 0 0 0 0 0 0 0 0 0
+3212547 0 0 0 0 0 1 0 0 0 0 0 0
+4273278179 0 0 0 0 1 0 0 0 0 0 0 0
+2350633695 0 0 0 0 0 0 0 0 0 0 0 0
+8291 0 0 0 0 1 0 0 0 0 0 0 0
+16217747 0 0 0 0 0 0 0 1 0 0 0 0
+1073745939 0 0 0 0 0 0 0 1 0 0 0 0
+4277626595 0 0 0 0 1 0 0 0 0 0 0 0
+20483 0 0 0 0 0 1 0 0 0 0 0 0
+4358375 0 0 0 1 0 0 0 0 0 0 0 0
+4207 0 0 1 0 0 0 0 0 0 0 0 0
+19174451 0 0 0 0 0 0 0 0 1 0 0 0
+4099 0 0 0 0 0 1 0 0 0 0 0 0
+4273278179 0 0 0 0 1 0 0 0 0 0 0 0
+2602467299 0 0 0 0 1 0 0 0 0 0 0 0
+810750707 0 0 0 0 0 0 0 0 0 1 0 0
+4887 0 1 0 0 0 0 0 0 0 0 0 0
+1073750067 0 0 0 0 0 0 0 0 1 0 0 0
+8291 0 0 0 0 1 0 0 0 0 0 0 0
+32431667 0 0 0 0 0 0 0 0 1 0 0 0
+1919778221 0 0 0 0 0 0 0 0 0 0 0 0
+16499 0 0 0 0 0 0 0 0 0 1 0 0
+305419575 1 0 0 0 0 0 0 0 0 0 0 0
+4273278179 0 0 0 0 1 0 0 0 0 0 0 0
+198300187 0 0 0 0 0 0 0 0 0 0 0 0
+32888211 0 0 0 0 0 0 0 1 0 0 0 0
+305419575 1 0 0 0 0 0 0 0 0 0 0 0
+1073745939 0 0 0 0 0 0 0 1 0 0 0 0
+1796191364 0 0 0 0 0 0 0 0 0 0 0 0
+8291 0 0 0 0 1 0 0 0 0 0 0 0
+1852350964 0 0 0 0 0 0 0 0 0 0 0 0
+8291 0 0 0 0 1 0 0 0 0 0 0 0
+2944722490 0 0 0 0 0 0 0 0 0 0 0 0
+3147134193 0 0 0 0 0 0 0 0 0 0 0 0
+115 0 0 0 0 0 0 0 0 0 1 1 0
+3212547 0 0 0 0 0 1 0 0 0 0 0 0
+33554483 0 0 0 0 0 0 0 0 1 0 0 0
+1085628339 0 0 0 0 0 0 0 0 1 0 0 0
+8291 0 0 0 0 1 0 0 0 0 0 0 0
+15132211 0 0 0 0 0 0 0 0 1 0 0 0
+4261581539 0 0 0 0 1 0 0 0 0 0 0 0
+1614661847 0 0 0 0 0 0 0 0 0 0 0 0
+1081279155 0 0 0 0 0 0 0 0 1 0 0 0
+4358375 0 0 0 1 0 0 0 0 0 0 0 0
+305419575 1 0 0 0 0 0 0 0 0 0 0 0</dataString></testData></entry></elementAttributes><pos x="100" y="860"/></visualElement>
+  </visualElements>
+  <wires/>
+  <measurementOrdering/>
+</circuit>

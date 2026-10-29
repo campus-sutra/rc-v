@@ -1,0 +1,6 @@
+round 1: cmp=20 latency=80
+round 2: cmp=40 latency=60
+round 3: cmp=60 latency=40
+round 4: cmp=80 latency=20
+round 5: cmp=100 latency=0
+max latency: 80

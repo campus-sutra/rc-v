@@ -1,0 +1,3 @@
+string 4: TIMER (offset 00000016)
+string 1: RAM (offset 00000004)
+string 2: UART (offset 00000008)

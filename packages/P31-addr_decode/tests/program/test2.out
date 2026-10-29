@@ -1,0 +1,6 @@
+ROM base = 00000000
+RAM base = 00010000
+I/O base = 00020000
+buttons  = 000000A5
+wrote    = DEADBEEF
+leds     = 0000BEEF

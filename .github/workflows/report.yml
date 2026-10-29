@@ -1,0 +1,78 @@
+# After "check" finishes on a pull request: post the result as a comment and,
+# if everything handed in passes, merge it. Runs with write access, so it never
+# runs code from the pull request: it re-checks ownership itself.
+name: report
+
+on:
+  workflow_run:
+    workflows: [check]
+    types: [completed]
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+  actions: read
+
+jobs:
+  report:
+    if: github.event.workflow_run.event == 'pull_request'
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Find the pull request
+        id: pr
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SHA: ${{ github.event.workflow_run.head_sha }}
+        run: |
+          N=$(gh api "repos/${{ github.repository }}/pulls?state=open&per_page=100" --paginate \
+                --jq ".[] | select(.head.sha == \"$SHA\") | .number" | head -1)
+          [ -z "$N" ] && { echo "no open pull request for $SHA"; exit 0; }
+          echo "number=$N" >> "$GITHUB_OUTPUT"
+          echo "author=$(gh pr view $N --json author --jq .author.login)" >> "$GITHUB_OUTPUT"
+          echo "base=$(gh pr view $N --json baseRefOid --jq .baseRefOid)" >> "$GITHUB_OUTPUT"
+
+      - name: Download the report
+        if: steps.pr.outputs.number
+        uses: actions/download-artifact@v4
+        with:
+          name: report
+          path: report
+          run-id: ${{ github.event.workflow_run.id }}
+          github-token: ${{ github.token }}
+
+      - name: Re-check ownership (trusted)
+        if: steps.pr.outputs.number
+        id: gate
+        run: |
+          git fetch -q origin "pull/${{ steps.pr.outputs.number }}/head:pr" registry
+          git show origin/registry:members.json > /tmp/members.json 2>/dev/null || echo '{}' > /tmp/members.json
+          python3 tools/ci/pr_gate.py "${{ steps.pr.outputs.base }}" pr "${{ steps.pr.outputs.author }}" /tmp/members.json > /tmp/gate.json
+          cat /tmp/gate.json
+          cp /tmp/gate.json report/gate.json
+          python3 -c "import json;g=json.load(open('/tmp/gate.json'));print('ok=' + ('1' if not g['problems'] and g['packages'] else '0'))" >> "$GITHUB_OUTPUT"
+
+      - name: Comment
+        if: steps.pr.outputs.number
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python3 tools/ci/summary.py report > comment.md
+          N=${{ steps.pr.outputs.number }}
+          OLD=$(gh api "repos/${{ github.repository }}/issues/$N/comments" --paginate \
+                  --jq '.[] | select(.body | startswith("<!-- rcv-check -->")) | .id' | head -1)
+          if [ -n "$OLD" ]; then
+            gh api -X PATCH "repos/${{ github.repository }}/issues/comments/$OLD" -F body=@comment.md > /dev/null
+          else
+            gh pr comment $N --body-file comment.md
+          fi
+
+      - name: Merge when it passes
+        if: steps.pr.outputs.number && steps.gate.outputs.ok == '1' && github.event.workflow_run.conclusion == 'success'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh pr merge ${{ steps.pr.outputs.number }} --merge

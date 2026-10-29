@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<circuit>
+  <version>1</version>
+  <attributes/>
+  <visualElements>
+    <visualElement><elementName>Clock</elementName><elementAttributes><entry><string>Label</string><string>clk</string></entry><entry><string>Frequency</string><int>1</int></entry></elementAttributes><pos x="100" y="100"/></visualElement>
+    <visualElement><elementName>In</elementName><elementAttributes><entry><string>Label</string><string>rst</string></entry><entry><string>Bits</string><int>1</int></entry></elementAttributes><pos x="100" y="160"/></visualElement>
+    <visualElement><elementName>In</elementName><elementAttributes><entry><string>Label</string><string>seed_we</string></entry><entry><string>Bits</string><int>1</int></entry></elementAttributes><pos x="100" y="220"/></visualElement>
+    <visualElement><elementName>In</elementName><elementAttributes><entry><string>Label</string><string>seed</string></entry><entry><string>Bits</string><int>16</int></entry></elementAttributes><pos x="100" y="280"/></visualElement>
+    <visualElement><elementName>In</elementName><elementAttributes><entry><string>Label</string><string>step</string></entry><entry><string>Bits</string><int>1</int></entry></elementAttributes><pos x="100" y="340"/></visualElement>
+    <visualElement><elementName>Out</elementName><elementAttributes><entry><string>Label</string><string>value</string></entry><entry><string>Bits</string><int>16</int></entry></elementAttributes><pos x="900" y="100"/></visualElement>
+    <visualElement><elementName>Text</elementName><elementAttributes><entry><string>Description</string><string>P54 Random numbers (LFSR) - Digital task
+16 D flip-flops and XOR gates.
+Allowed parts: gates + multiplexer/decoder parts + flip-flops
+Do not rename, move or delete the input and output pins.</string></entry></elementAttributes><pos x="100" y="40"/></visualElement>
+    <visualElement><elementName>Testcase</elementName><elementAttributes><entry><string>Label</string><string>public tests</string></entry><entry><string>Testdata</string><testData><dataString>clk rst seed_we seed step value
+C 1 0 25 1 44257
+C 0 0 32767 0 44257
+C 0 1 54029 0 54029
+C 0 0 32767 0 54029
+C 0 0 32767 1 56710
+C 0 0 50771 1 28355
+C 0 0 52001 0 28355
+C 0 0 32767 1 33633
+C 0 0 59989 0 33633
+C 0 1 42239 0 42239
+C 0 0 3 1 59007
+C 0 1 32767 1 32767
+C 0 0 16 0 32767
+C 0 1 23020 1 23020
+C 0 0 18039 1 11510
+C 0 0 32345 1 5755
+C 0 0 32767 1 48957
+C 0 1 22732 0 22732
+C 0 0 40198 0 22732
+C 0 0 44136 1 11366
+C 0 1 32768 0 32768
+C 0 1 37890 1 37890
+C 0 1 65535 1 65535
+C 0 1 32768 1 32768
+C 0 0 65535 0 32768
+C 0 0 65535 1 16384
+C 0 0 5433 0 16384
+C 0 0 0 1 8192
+C 0 0 30991 0 8192
+C 0 0 30957 1 4096
+C 0 1 6138 0 6138
+C 0 1 0 0 44257
+C 0 0 55318 1 57968
+C 0 0 11 1 28984
+C 0 1 59758 0 59758
+C 0 0 1534 1 29879
+C 0 1 3927 1 3927
+C 0 0 5 1 45995
+C 0 1 0 0 44257
+C 0 0 34605 0 44257
+C 0 1 0 0 44257
+C 0 0 26687 0 44257
+C 0 1 43083 0 43083
+C 1 1 32767 1 44257
+C 0 0 16188 1 57968
+C 0 0 21 1 28984
+C 0 0 65535 1 14492
+C 0 1 17673 0 17673
+C 0 1 32768 0 32768
+C 0 0 12608 1 16384
+C 0 1 6698 1 6698
+C 1 0 51162 0 44257
+C 0 0 0 0 44257
+C 0 1 65535 0 65535
+C 0 1 65535 1 65535
+C 0 1 61865 1 61865
+C 0 1 44198 0 44198
+C 0 0 9 0 44198
+C 0 1 32767 0 32767
+C 0 1 35770 1 35770
+C 0 0 26014 0 35770
+C 0 0 41543 1 17885
+C 0 1 5 0 5
+C 0 1 15 0 15
+C 0 0 65535 1 46087
+C 0 1 29688 1 29688
+C 0 0 40413 0 29688
+C 0 1 35547 1 35547
+C 0 0 64392 0 35547
+C 0 0 28606 1 61805
+C 0 0 26 0 61805
+C 0 0 65200 0 61805
+C 0 0 57726 1 52406
+C 0 1 0 1 44257
+C 0 1 32767 1 32767
+C 0 1 65535 0 65535
+C 0 0 0 1 52223
+C 0 0 40996 0 52223
+C 0 0 17331 0 52223
+C 0 0 54089 1 53759
+C 0 1 1 0 1
+C 0 0 32767 1 46080
+C 0 1 14831 1 14831
+C 0 1 44709 0 44709
+C 0 1 32767 0 32767
+C 0 0 27 0 32767
+C 0 1 34758 0 34758
+C 1 1 9 1 44257
+C 0 0 16 1 57968
+C 0 0 47471 1 28984
+C 0 0 14691 1 14492
+C 0 0 65535 0 14492
+C 0 0 32768 0 14492
+C 0 1 65535 0 65535
+C 0 1 39339 1 39339
+C 0 1 32767 0 32767
+C 0 1 15664 0 15664
+C 0 1 29858 0 29858
+C 0 0 8820 1 14929
+C 0 1 32896 0 32896
+C 0 0 42773 1 16448
+C 0 1 26397 0 26397
+C 0 1 0 1 44257
+C 0 1 29213 1 29213
+C 0 0 1888 0 29213
+C 0 0 0 1 36110
+C 0 1 32767 0 32767
+C 0 0 26 1 35839
+C 0 0 65535 1 61951
+C 0 0 65535 1 52479
+C 0 0 65535 1 53887
+C 0 1 32768 1 32768
+C 0 1 21072 0 21072
+C 0 1 26836 1 26836
+C 0 0 20430 1 13418
+C 0 1 13 0 13
+C 0 0 32768 0 13
+C 0 1 27336 1 27336
+C 0 1 30 0 30
+C 0 0 28440 1 15
+C 0 1 20 0 20
+C 0 1 61356 0 61356
+C 1 0 10967 0 44257
+C 0 1 30 0 30
+C 0 0 39463 0 30
+C 0 0 4421 1 15
+C 0 1 53084 0 53084
+C 0 1 32767 1 32767
+C 0 0 16910 1 35839
+C 0 1 2758 1 2758
+C 0 1 0 1 44257
+C 0 1 7955 1 7955
+C 0 0 65535 0 7955
+C 0 1 62916 1 62916
+C 0 1 32768 1 32768
+C 0 0 0 0 32768
+C 0 0 6858 0 32768
+C 0 1 65535 0 65535
+C 0 1 19132 1 19132
+C 0 0 0 1 9566
+C 0 1 4 1 4
+C 0 0 55892 1 2
+C 0 1 27290 1 27290
+C 0 0 49851 0 27290
+C 0 1 46457 0 46457
+C 0 0 65535 1 61116
+C 0 0 3 0 61116
+C 0 0 28610 1 30558
+C 0 0 0 1 15279
+C 0 1 39196 0 39196
+C 0 1 23 1 23
+C 0 1 16 1 16
+C 0 1 21 0 21
+C 0 1 32768 1 32768
+C 0 1 1977 1 1977
+C 0 1 16 1 16
+C 0 1 31943 0 31943
+C 0 1 0 0 44257
+C 0 0 39998 0 44257
+C 0 1 32768 0 32768</dataString></testData></entry></elementAttributes><pos x="100" y="440"/></visualElement>
+  </visualElements>
+  <wires/>
+  <measurementOrdering/>
+</circuit>

@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+build/
+*.vcd
+/site/
+/report/
+.DS_Store
+Thumbs.db

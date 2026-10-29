@@ -1,0 +1,18 @@
+name: Join RC-V
+description: Use your join code to get your package
+title: "Join RC-V"
+labels: ["join"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Paste the join code from the slip your teacher gave you. A bot will answer within a minute
+        with your package and what to do next. Do not write your name or roll number here: this
+        repository is public.
+  - type: input
+    id: code
+    attributes:
+      label: Join code
+      placeholder: ABCD-EFGH-JKLM
+    validations:
+      required: true

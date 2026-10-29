@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<circuit>
+  <version>1</version>
+  <attributes/>
+  <visualElements>
+    <visualElement><elementName>Clock</elementName><elementAttributes><entry><string>Label</string><string>clk</string></entry><entry><string>Frequency</string><int>1</int></entry></elementAttributes><pos x="100" y="100"/></visualElement>
+    <visualElement><elementName>In</elementName><elementAttributes><entry><string>Label</string><string>rst</string></entry><entry><string>Bits</string><int>1</int></entry></elementAttributes><pos x="100" y="160"/></visualElement>
+    <visualElement><elementName>In</elementName><elementAttributes><entry><string>Label</string><string>write_halt</string></entry><entry><string>Bits</string><int>1</int></entry></elementAttributes><pos x="100" y="220"/></visualElement>
+    <visualElement><elementName>In</elementName><elementAttributes><entry><string>Label</string><string>commit</string></entry><entry><string>Bits</string><int>1</int></entry></elementAttributes><pos x="100" y="280"/></visualElement>
+    <visualElement><elementName>In</elementName><elementAttributes><entry><string>Label</string><string>instr</string></entry><entry><string>Bits</string><int>32</int></entry></elementAttributes><pos x="100" y="340"/></visualElement>
+    <visualElement><elementName>Out</elementName><elementAttributes><entry><string>Label</string><string>halted</string></entry><entry><string>Bits</string><int>1</int></entry></elementAttributes><pos x="900" y="100"/></visualElement>
+    <visualElement><elementName>Text</elementName><elementAttributes><entry><string>Description</string><string>P57 Halt controller - Digital task
+A sticky flip-flop and a 32-bit comparator.
+Allowed parts: all of the above + Add, Sub, Comparator, Neg
+Do not rename, move or delete the input and output pins.</string></entry></elementAttributes><pos x="100" y="40"/></visualElement>
+    <visualElement><elementName>Testcase</elementName><elementAttributes><entry><string>Label</string><string>public tests</string></entry><entry><string>Testdata</string><testData><dataString>clk rst write_halt commit instr halted
+C 1 0 1 2516251050 0
+C 0 1 0 1 1
+C 0 1 1 31 1
+C 0 0 1 474052940 1
+C 0 1 0 2423241637 1
+C 0 1 1 23 1
+C 0 1 1 664303353 1
+C 0 1 1 5 1
+C 0 1 0 1484465729 1
+C 0 1 0 1738285072 1
+C 0 0 1 4294967295 1
+C 0 0 0 10 1
+C 0 1 0 1308761885 1
+C 0 1 1 1916718037 1
+C 0 0 0 23 1
+C 0 0 1 16 1
+C 0 0 1 2529301721 1
+C 0 1 1 3678893873 1
+C 0 1 1 2147483648 1
+C 0 0 0 13 1
+C 0 0 0 810671842 1
+C 0 0 1 2147483647 1
+C 0 0 0 0 1
+C 0 1 0 1799324726 1
+C 0 0 0 19 1
+C 0 1 0 14 1
+C 0 0 1 6 1
+C 0 0 0 3779060668 1
+C 0 0 0 0 1
+C 0 0 1 1989452264 1
+C 0 1 0 1739396023 1
+C 0 0 1 988905532 1
+C 0 0 1 2147483648 1
+C 0 1 1 2915922209 1
+C 0 0 0 4294967295 1
+C 0 0 0 16 1
+C 0 0 1 29 1
+C 1 0 0 19 0
+C 0 0 1 1982022531 0
+C 0 1 1 4294967295 1
+C 0 1 0 4294967295 1
+C 0 1 0 26 1
+C 0 0 1 2650672850 1
+C 0 0 0 17 1
+C 0 0 0 29 1
+C 0 0 0 30 1
+C 0 1 1 0 1
+C 0 0 1 2795467929 1
+C 0 1 0 24 1
+C 0 0 0 714225969 1
+C 0 1 0 7 1
+C 0 1 0 820661878 1
+C 0 1 0 3914001352 1
+C 0 1 0 0 1
+C 0 0 0 4294967295 1
+C 0 1 0 24 1
+C 0 1 1 8 1
+C 0 0 0 4294967295 1
+C 0 0 1 3260586816 1
+C 0 0 1 1012335920 1
+C 0 1 1 3 1
+C 0 1 1 755544556 1
+C 0 1 1 1368920820 1
+C 0 1 1 1831702536 1
+C 0 1 1 9 1
+C 0 0 1 2690565287 1
+C 0 0 0 4068537534 1
+C 0 0 0 260086551 1
+C 0 1 0 17 1
+C 0 0 1 4294967295 1
+C 0 1 1 4294967295 1
+C 0 1 1 3176379966 1
+C 0 0 1 21 1
+C 0 1 0 23 1
+C 0 0 1 1139806093 1
+C 0 0 1 4294967295 1
+C 0 0 0 670007660 1
+C 0 1 0 456157256 1
+C 0 0 0 2147483648 1
+C 0 0 0 2147483648 1
+C 1 1 1 2147483648 0
+C 0 1 1 3580881752 1
+C 0 0 1 4294967295 1
+C 0 0 1 952316620 1
+C 0 1 0 788292680 1
+C 0 0 0 10 1
+C 0 0 0 0 1
+C 0 1 1 4272595924 1
+C 0 0 0 3896353821 1
+C 0 0 0 2543484348 1
+C 0 1 1 498533894 1
+C 0 1 0 4294967295 1
+C 0 1 0 15 1
+C 0 1 0 2147483648 1
+C 0 1 0 1648876478 1
+C 0 1 0 861754596 1
+C 0 0 0 2147483647 1
+C 0 0 0 2027990809 1
+C 0 1 0 2760241488 1
+C 0 1 0 4294967295 1
+C 0 0 1 11 1
+C 0 0 0 4009653341 1
+C 0 1 1 281767755 1
+C 0 1 0 1193533565 1
+C 1 1 0 2324375402 0
+C 0 0 0 3470071129 0
+C 0 0 0 10 0
+C 0 0 1 2147483648 0
+C 0 0 0 1477450957 0
+C 0 1 1 3908624603 1
+C 0 1 1 2147483647 1
+C 0 1 0 3164247831 1
+C 0 1 0 3922116633 1
+C 0 0 0 4294967295 1
+C 0 1 0 2502948108 1
+C 0 0 0 0 1
+C 0 0 0 3154173361 1
+C 0 0 1 934325281 1
+C 0 1 1 3788517607 1
+C 0 0 1 360206118 1
+C 0 0 1 2147483647 1
+C 0 1 1 1727709611 1
+C 0 1 1 3095271452 1
+C 0 0 0 27 1
+C 0 1 1 2147483648 1
+C 0 0 1 4294967295 1
+C 0 1 0 3759458511 1
+C 0 1 0 764223537 1
+C 0 1 1 488010148 1
+C 0 1 0 4267620378 1
+C 0 0 1 3789566832 1
+C 0 1 0 3157093003 1
+C 0 0 0 4191618810 1
+C 0 0 1 2595313219 1
+C 0 1 0 374778217 1
+C 0 0 1 3199583558 1
+C 0 1 0 0 1
+C 0 1 0 1719404467 1
+C 0 1 0 289394740 1
+C 0 0 0 2314379731 1
+C 0 0 0 28 1
+C 0 0 0 1607686338 1
+C 0 1 1 1198070486 1
+C 0 0 1 478164622 1
+C 0 1 1 24 1
+C 0 1 0 3093845685 1
+C 0 1 0 3207098399 1
+C 0 1 0 2147483648 1
+C 0 1 1 1 1
+C 0 1 1 2147483647 1
+C 0 1 1 29 1
+C 0 1 0 20 1
+C 0 0 1 2106001526 1
+C 1 1 0 3648334687 0
+C 0 0 1 12 0
+C 0 0 1 22 0
+C 0 1 0 692837710 1
+C 0 1 0 1619387774 1
+C 0 0 0 4213695829 1
+C 0 1 1 1306659749 1</dataString></testData></entry></elementAttributes><pos x="100" y="440"/></visualElement>
+  </visualElements>
+  <wires/>
+  <measurementOrdering/>
+</circuit>

@@ -1,0 +1,59 @@
+# Rebuilds the class board (GitHub Pages) after every merge and twice a day.
+name: board
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "30 3,15 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: board
+  cancel-in-progress: true
+
+jobs:
+  board:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Install Icarus Verilog
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq iverilog > /dev/null
+      - name: Cache Digital
+        id: digital
+        uses: actions/cache@v4
+        with:
+          path: ~/digital
+          key: digital-v0.31
+      - name: Download Digital v0.31
+        if: steps.digital.outputs.cache-hit != 'true'
+        run: |
+          mkdir -p ~/digital && cd ~/digital
+          curl -sSL -o Digital.zip https://github.com/hneemann/Digital/releases/download/v0.31/Digital.zip
+          unzip -q Digital.zip && rm Digital.zip
+      - name: Check every package
+        env:
+          RCV_DIGITAL_JAR: /home/runner/digital/Digital/Digital.jar
+        run: |
+          cd tools && python3 -m rcv.check $(seq 1 66) --json /tmp/check.json > /dev/null || true
+          python3 -m rcv.classrom --demo > /tmp/classrom.txt 2>&1 || true
+      - name: Build the board
+        run: |
+          git fetch -q origin registry && git show origin/registry:members.json > /tmp/members.json || echo '{}' > /tmp/members.json
+          python3 tools/ci/board.py /tmp/check.json /tmp/members.json /tmp/classrom.txt site
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - id: deploy
+        uses: actions/deploy-pages@v4

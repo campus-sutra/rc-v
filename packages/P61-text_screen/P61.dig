@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<circuit>
+  <version>1</version>
+  <attributes/>
+  <visualElements>
+    <visualElement><elementName>Clock</elementName><elementAttributes><entry><string>Label</string><string>clk</string></entry><entry><string>Frequency</string><int>1</int></entry></elementAttributes><pos x="100" y="100"/></visualElement>
+    <visualElement><elementName>In</elementName><elementAttributes><entry><string>Label</string><string>rst</string></entry><entry><string>Bits</string><int>1</int></entry></elementAttributes><pos x="100" y="160"/></visualElement>
+    <visualElement><elementName>In</elementName><elementAttributes><entry><string>Label</string><string>put</string></entry><entry><string>Bits</string><int>1</int></entry></elementAttributes><pos x="100" y="220"/></visualElement>
+    <visualElement><elementName>In</elementName><elementAttributes><entry><string>Label</string><string>newline</string></entry><entry><string>Bits</string><int>1</int></entry></elementAttributes><pos x="100" y="280"/></visualElement>
+    <visualElement><elementName>In</elementName><elementAttributes><entry><string>Label</string><string>clear</string></entry><entry><string>Bits</string><int>1</int></entry></elementAttributes><pos x="100" y="340"/></visualElement>
+    <visualElement><elementName>Out</elementName><elementAttributes><entry><string>Label</string><string>cursor</string></entry><entry><string>Bits</string><int>6</int></entry></elementAttributes><pos x="900" y="100"/></visualElement>
+    <visualElement><elementName>Text</elementName><elementAttributes><entry><string>Description</string><string>P61 Text screen - Digital task
+The cursor logic: a 6-bit register, +1, next-row and wrap-around.
+Allowed parts: all of the above + Add, Sub, Comparator, Neg
+Do not rename, move or delete the input and output pins.</string></entry></elementAttributes><pos x="100" y="40"/></visualElement>
+    <visualElement><elementName>Testcase</elementName><elementAttributes><entry><string>Label</string><string>public tests</string></entry><entry><string>Testdata</string><testData><dataString>clk rst put newline clear cursor
+C 1 1 1 1 0
+C 0 1 0 1 0
+C 0 1 1 1 0
+C 0 1 1 0 16
+C 0 1 0 1 0
+C 0 1 0 0 1
+C 0 1 1 1 0
+C 0 1 1 1 0
+C 0 0 0 0 0
+C 0 1 1 0 16
+C 0 0 1 0 32
+C 0 0 0 0 32
+C 0 0 1 1 0
+C 0 1 1 1 0
+C 0 0 0 0 0
+C 0 1 1 0 16
+C 0 1 0 0 17
+C 0 0 1 0 32
+C 0 1 0 0 33
+C 0 1 0 1 0
+C 0 1 0 0 1
+C 0 1 1 1 0
+C 0 1 1 1 0
+C 0 1 1 1 0
+C 0 1 1 1 0
+C 0 1 1 0 16
+C 0 1 1 0 32
+C 0 1 1 0 48
+C 0 0 0 1 0
+C 0 0 0 0 0
+C 0 0 0 0 0
+C 0 0 0 0 0
+C 0 1 0 1 0
+C 0 0 0 1 0
+C 0 0 1 0 16
+C 0 1 0 1 0
+C 0 0 0 0 0
+C 0 1 1 1 0
+C 0 0 0 0 0
+C 0 1 1 1 0
+C 0 1 0 1 0
+C 0 0 0 0 0
+C 0 0 1 0 16
+C 0 0 1 0 32
+C 0 1 1 0 48
+C 0 1 0 1 0
+C 0 1 0 0 1
+C 0 1 0 1 0
+C 0 0 1 1 0
+C 0 0 0 0 0
+C 1 1 1 0 0
+C 0 1 0 0 1
+C 0 0 0 0 1
+C 0 0 1 1 0
+C 0 1 1 1 0
+C 0 0 0 0 0
+C 0 1 1 1 0
+C 0 1 0 0 1
+C 0 1 0 0 2
+C 0 0 0 0 2
+C 0 1 0 0 3
+C 0 1 0 0 4
+C 0 1 1 0 16
+C 0 0 0 0 16
+C 0 1 0 0 17
+C 0 1 0 1 0
+C 0 0 1 0 16
+C 0 0 0 0 16
+C 0 0 1 1 0
+C 0 1 0 1 0
+C 0 0 1 1 0
+C 0 1 1 1 0
+C 0 1 0 0 1
+C 0 0 0 1 0
+C 0 0 1 0 16
+C 0 0 1 0 32
+C 0 1 0 1 0
+C 0 1 0 1 0
+C 0 1 0 0 1
+C 0 1 0 1 0
+C 0 0 1 0 16
+C 0 1 1 1 0
+C 0 1 1 1 0
+C 0 1 1 1 0
+C 0 0 1 0 16
+C 0 0 0 1 0
+C 0 0 0 0 0
+C 0 0 0 0 0
+C 0 0 1 0 16
+C 0 1 1 0 32
+C 0 1 0 0 33
+C 0 0 0 0 33
+C 0 0 0 0 33
+C 0 0 1 0 48
+C 0 0 1 1 0
+C 0 0 1 1 0
+C 0 0 0 0 0
+C 0 0 1 1 0
+C 0 1 0 1 0
+C 0 1 0 0 1
+C 0 1 1 1 0
+C 0 1 1 0 16
+C 0 0 1 1 0
+C 0 0 1 0 16
+C 0 1 1 1 0
+C 0 0 0 0 0
+C 0 1 0 1 0
+C 0 1 1 0 16
+C 0 1 1 0 32
+C 0 1 1 0 48
+C 0 1 0 0 49
+C 0 0 1 1 0
+C 0 1 1 0 16
+C 0 0 0 0 16
+C 0 1 0 0 17
+C 0 0 0 0 17
+C 0 1 0 1 0
+C 0 0 0 1 0
+C 0 1 0 0 1
+C 0 1 0 0 2
+C 0 1 0 0 3
+C 0 1 1 0 16
+C 0 1 0 1 0
+C 0 0 1 0 16
+C 1 1 0 1 0
+C 0 1 0 0 1
+C 0 0 1 0 16
+C 0 1 1 1 0
+C 0 1 0 1 0
+C 0 1 1 0 16
+C 0 1 0 0 17
+C 0 1 0 1 0
+C 0 1 1 0 16
+C 0 1 0 0 17
+C 1 0 1 1 0
+C 0 0 0 1 0
+C 0 0 0 0 0
+C 0 1 1 1 0
+C 0 1 1 0 16
+C 0 0 1 1 0
+C 0 1 1 1 0
+C 0 1 1 0 16
+C 0 1 1 0 32
+C 0 0 0 1 0
+C 0 0 1 1 0
+C 0 1 1 1 0
+C 0 1 1 1 0
+C 0 0 1 1 0
+C 0 1 1 0 16
+C 0 1 1 0 32
+C 0 1 1 0 48
+C 0 0 1 0 0
+C 0 0 0 0 0
+C 0 1 1 0 16
+C 0 0 0 1 0
+C 0 0 0 0 0
+C 0 0 0 1 0
+C 0 1 0 0 1
+C 0 1 0 1 0
+C 0 1 1 1 0</dataString></testData></entry></elementAttributes><pos x="100" y="440"/></visualElement>
+  </visualElements>
+  <wires/>
+  <measurementOrdering/>
+</circuit>

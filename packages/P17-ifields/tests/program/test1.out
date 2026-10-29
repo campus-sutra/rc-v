@@ -1,0 +1,4 @@
+add x10, x11, x12
+sub x5, x6, x7
+I-type
+S-type

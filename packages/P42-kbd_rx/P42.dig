@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<circuit>
+  <version>1</version>
+  <attributes/>
+  <visualElements>
+    <visualElement><elementName>Clock</elementName><elementAttributes><entry><string>Label</string><string>clk</string></entry><entry><string>Frequency</string><int>1</int></entry></elementAttributes><pos x="100" y="100"/></visualElement>
+    <visualElement><elementName>In</elementName><elementAttributes><entry><string>Label</string><string>rst</string></entry><entry><string>Bits</string><int>1</int></entry></elementAttributes><pos x="100" y="160"/></visualElement>
+    <visualElement><elementName>In</elementName><elementAttributes><entry><string>Label</string><string>ext_valid</string></entry><entry><string>Bits</string><int>1</int></entry></elementAttributes><pos x="100" y="220"/></visualElement>
+    <visualElement><elementName>In</elementName><elementAttributes><entry><string>Label</string><string>ext_char</string></entry><entry><string>Bits</string><int>8</int></entry></elementAttributes><pos x="100" y="280"/></visualElement>
+    <visualElement><elementName>In</elementName><elementAttributes><entry><string>Label</string><string>pop</string></entry><entry><string>Bits</string><int>1</int></entry></elementAttributes><pos x="100" y="340"/></visualElement>
+    <visualElement><elementName>Out</elementName><elementAttributes><entry><string>Label</string><string>data</string></entry><entry><string>Bits</string><int>8</int></entry></elementAttributes><pos x="900" y="100"/></visualElement>
+    <visualElement><elementName>Out</elementName><elementAttributes><entry><string>Label</string><string>full</string></entry><entry><string>Bits</string><int>1</int></entry></elementAttributes><pos x="900" y="160"/></visualElement>
+    <visualElement><elementName>Out</elementName><elementAttributes><entry><string>Label</string><string>take</string></entry><entry><string>Bits</string><int>1</int></entry></elementAttributes><pos x="900" y="220"/></visualElement>
+    <visualElement><elementName>Text</elementName><elementAttributes><entry><string>Description</string><string>P42 Keyboard input - Digital task
+The one-character buffer and its full flag.
+Allowed parts: gates + multiplexer/decoder parts + flip-flops
+Do not rename, move or delete the input and output pins.</string></entry></elementAttributes><pos x="100" y="40"/></visualElement>
+    <visualElement><elementName>Testcase</elementName><elementAttributes><entry><string>Label</string><string>public tests</string></entry><entry><string>Testdata</string><testData><dataString>clk rst ext_valid ext_char pop data full take
+C 1 0 109 1 0 0 0
+C 0 1 40 1 0 0 0
+C 0 1 7 1 0 0 0
+C 0 0 84 1 0 0 0
+C 0 1 255 1 0 0 0
+C 0 0 0 0 0 0 0
+C 0 1 0 0 0 1 0
+C 1 1 127 1 0 0 0
+C 1 1 0 0 0 0 1
+C 0 0 12 0 0 0 0
+C 0 0 127 1 0 0 0
+C 0 0 101 0 0 0 0
+C 1 1 24 0 0 0 1
+C 0 0 5 0 0 0 0
+C 0 0 29 0 0 0 0
+C 0 0 255 1 0 0 0
+C 0 1 242 1 0 0 0
+C 0 0 0 1 0 0 0
+C 0 0 30 1 0 0 0
+C 0 1 93 1 0 0 0
+C 0 1 96 1 0 0 0
+C 0 1 128 1 0 0 0
+C 0 0 88 0 0 0 0
+C 0 0 1 1 0 0 0
+C 0 1 237 0 237 1 0
+C 0 0 127 0 237 1 0
+C 0 0 195 0 237 1 0
+C 0 1 23 1 0 0 0
+C 0 1 21 1 0 0 0
+C 0 0 0 0 0 0 0
+C 0 0 10 1 0 0 0
+C 0 1 0 1 0 0 0
+C 0 1 30 0 30 1 0
+C 0 1 95 0 30 1 0
+C 0 1 127 1 0 0 0
+C 1 1 17 1 0 0 0
+C 0 0 70 1 0 0 0
+C 0 0 163 1 0 0 0
+C 0 1 197 1 0 0 0
+C 0 1 124 1 0 0 0
+C 0 0 214 0 0 0 0
+C 0 1 17 0 17 1 0
+C 0 1 128 1 0 0 0
+C 0 1 7 0 7 1 0
+C 0 1 74 0 7 1 0
+C 0 1 248 0 7 1 0
+C 0 1 12 1 0 0 0
+C 0 0 196 0 0 0 0
+C 0 1 89 1 0 0 0
+C 1 1 179 1 0 0 0
+C 0 1 255 1 0 0 0
+C 0 1 123 1 0 0 0
+C 0 0 196 0 0 0 0
+C 0 0 149 0 0 0 0
+C 0 0 0 1 0 0 0
+C 0 0 128 0 0 0 0
+C 0 1 14 1 0 0 0
+C 0 1 187 0 187 1 0
+C 1 0 224 0 0 0 0
+C 0 0 57 1 0 0 0
+C 0 0 221 0 0 0 0
+C 0 0 208 0 0 0 0
+C 0 0 213 1 0 0 0
+C 0 1 28 1 0 0 0
+C 0 1 150 1 0 0 0
+C 0 0 28 1 0 0 0
+C 0 0 212 0 0 0 0
+C 0 0 20 1 0 0 0
+C 0 0 13 0 0 0 0
+C 0 0 6 1 0 0 0
+C 0 0 31 1 0 0 0
+C 0 0 231 0 0 0 0
+C 0 0 87 1 0 0 0
+C 0 0 128 0 0 0 0
+C 0 1 26 1 0 0 0
+C 0 0 93 0 0 0 0
+C 0 0 127 0 0 0 0
+C 0 0 0 0 0 0 0
+C 0 1 255 0 255 1 0
+C 0 1 15 0 255 1 0
+C 0 1 235 0 255 1 0
+C 0 0 255 1 0 0 0
+C 0 1 127 0 127 1 0
+C 0 1 195 0 127 1 0
+C 0 1 64 0 127 1 0
+C 0 0 95 0 127 1 0
+C 0 0 16 0 127 1 0
+C 0 1 128 0 127 1 0
+C 0 1 87 1 0 0 0
+C 0 1 22 0 22 1 0
+C 0 0 64 0 22 1 0
+C 0 1 128 1 0 0 0
+C 0 1 198 0 198 1 0
+C 0 0 26 0 198 1 0
+C 0 0 142 1 0 0 0
+C 0 0 191 1 0 0 0
+C 1 1 127 1 0 0 0
+C 0 0 232 0 0 0 0
+C 0 1 24 0 24 1 0
+C 0 1 1 1 0 0 0
+C 0 1 1 1 0 0 0
+C 1 1 217 1 0 0 0
+C 1 0 99 0 0 0 0
+C 0 0 128 0 0 0 0
+C 0 0 197 0 0 0 0
+C 0 0 2 1 0 0 0
+C 0 0 78 0 0 0 0
+C 0 1 97 1 0 0 0
+C 0 1 0 1 0 0 0
+C 0 1 26 1 0 0 0
+C 0 1 100 1 0 0 0
+C 0 1 15 1 0 0 0
+C 0 1 0 1 0 0 0
+C 0 0 72 0 0 0 0
+C 0 0 24 0 0 0 0
+C 0 0 255 1 0 0 0
+C 0 1 14 0 14 1 0
+C 0 0 255 0 14 1 0
+C 0 1 142 1 0 0 0
+C 0 1 255 1 0 0 0
+C 0 1 170 1 0 0 0
+C 0 0 128 1 0 0 0
+C 0 1 127 0 127 1 0
+C 0 1 205 0 127 1 0
+C 0 1 180 1 0 0 0
+C 0 1 116 1 0 0 0
+C 0 0 11 1 0 0 0
+C 0 0 56 0 0 0 0
+C 0 1 255 0 255 1 0
+C 0 1 206 0 255 1 0
+C 0 1 225 1 0 0 0
+C 0 0 179 0 0 0 0
+C 0 0 15 1 0 0 0
+C 0 0 8 0 0 0 0
+C 0 1 203 0 203 1 0
+C 0 1 30 0 203 1 0
+C 1 1 0 0 0 0 1
+C 0 0 129 1 0 0 0
+C 0 0 24 0 0 0 0
+C 0 0 169 1 0 0 0
+C 0 1 127 0 127 1 0
+C 0 0 141 1 0 0 0
+C 0 1 146 1 0 0 0
+C 0 1 251 0 251 1 0
+C 0 1 0 0 251 1 0
+C 0 0 127 0 251 1 0
+C 0 1 247 1 0 0 0
+C 0 1 23 1 0 0 0
+C 0 1 236 1 0 0 0
+C 0 1 7 0 7 1 0
+C 0 1 6 1 0 0 0
+C 0 1 26 0 26 1 0
+C 0 1 127 1 0 0 0
+C 0 1 226 0 226 1 0
+C 1 0 128 1 0 0 0
+C 0 0 0 1 0 0 0
+C 0 1 91 0 91 1 0
+C 0 0 53 1 0 0 0
+C 0 0 127 1 0 0 0
+C 0 0 144 0 0 0 0</dataString></testData></entry></elementAttributes><pos x="100" y="440"/></visualElement>
+  </visualElements>
+  <wires/>
+  <measurementOrdering/>
+</circuit>

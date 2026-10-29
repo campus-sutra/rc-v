@@ -1,0 +1,6 @@
+sorted: 1 2 3 4 5 6 7 8 9 10
+loads: 90
+stores: 0
+branches: 99
+taken: 89
+jumps: 2

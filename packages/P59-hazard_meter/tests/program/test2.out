@@ -1,0 +1,2 @@
+version A: sum=42 loaduse=1 raw1=2
+version B: sum=42 loaduse=0 raw1=1

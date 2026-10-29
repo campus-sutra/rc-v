@@ -1,0 +1,9 @@
+SEG = 99999999
+0: anode=00000001 digit=9
+1: anode=00000010 digit=9
+2: anode=00000100 digit=9
+3: anode=00001000 digit=9
+4: anode=00010000 digit=9
+5: anode=00100000 digit=9
+6: anode=01000000 digit=9
+7: anode=10000000 digit=9
