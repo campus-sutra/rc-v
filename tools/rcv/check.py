@@ -112,7 +112,8 @@ def check_digital(p, f, jar):
                         "-tests", str(tests), "-verbose"], capture_output=True, text=True, cwd=f)
     out = (r.stdout + r.stderr).strip()
     if r.returncode != 0 or "passed" not in out:
-        lines = [l for l in out.splitlines() if l.strip()][:12]
+        lines = [l for l in out.splitlines() if l.strip() and "java.util.prefs" not in l
+                 and not l.startswith("INFO:")][:12]
         problems.append("tests failed:\n" + "\n".join("    " + l for l in lines))
     return ("pass" if not problems else "fail"), problems
 
