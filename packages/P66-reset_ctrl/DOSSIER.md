@@ -4,44 +4,54 @@ Answer in your own words; short answers are fine. Diagrams can be photos of
 hand drawings (put them next to this file and link them).
 
 ## U1 Digital logic
+Test answer written by the teacher to check the automatic merge; reverted straight after.
 Give the truth table (or state table) of one part of your circuit and the
 simplified Boolean expression you used. Which gates or flip-flops did you need?
 
 ## U2 Digital components
+Test answer written by the teacher to check the automatic merge; reverted straight after.
 Which building blocks (adders, multiplexers, decoders, registers, memory)
 does your Digital circuit use, and how are they connected?
 
 ## U3 Data representation
+Test answer written by the teacher to check the automatic merge; reverted straight after.
 Pick three test vectors of your block and explain them in binary, hex and
 decimal (signed where it matters). Where could overflow or sign extension go wrong?
 
 ## U4 Computer organisation
+Test answer written by the teacher to check the automatic merge; reverted straight after.
 In which step of the instruction cycle (fetch, decode, execute, memory,
 write-back, interrupt) does your block do its work? Which instructions need it?
 
 ## U5 Processors
+Test answer written by the teacher to check the automatic merge; reverted straight after.
 How would a CISC processor, a stack machine or a GPU do the job of your
 block differently? (Look at the RISC-V vs Mano comparison in docs/ARCHITECTURE.md.)
 
 ## U6 Memory and I/O
+Test answer written by the teacher to check the automatic merge; reverted straight after.
 How does your block take part in a memory access or an I/O transfer? If it
 does not, explain which neighbouring block does and how data reaches it.
 
 ## E1 Instruction trace: ADD
+Test answer written by the teacher to check the automatic merge; reverted straight after.
 Trace one **ADD** instruction through the whole RC-V processor,
 block by block (use docs/ARCHITECTURE.md and the simulator's --trace output).
 List the blocks it passes through and the value on the main signals.
 
 ## E2 Neighbour review
+Test answer written by the teacher to check the automatic merge; reverted straight after.
 Review the pull requests of P65 (Complement unit (r and r-1 complements)) and P49 (Performance counters). Paste the links to your review
 comments here.
 
 ## E3 Where my block sits
+Test answer written by the teacher to check the automatic merge; reverted straight after.
 In two or three sentences: which layer of the computer is your block in
 (gates / components / datapath / control / instruction set / memory / I/O),
 which blocks feed it and which blocks use its output?
 
 ## E4 Syllabus map
+Test answer written by the teacher to check the automatic merge; reverted straight after.
 Tick every syllabus topic your work touched (main units: Unit 1, Unit 4).
 
 - [ ] Logic gates, Boolean algebra, K-maps
