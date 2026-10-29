@@ -14,7 +14,7 @@ module p46_timer (
     output wire irq
 );
 
-    assign rdata = 32'd0;   // placeholder
+    assign rdata = 32'd46;  // wrong on purpose (pipeline test)
     assign irq = 1'd0;   // placeholder
 
 endmodule
