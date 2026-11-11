@@ -96,19 +96,14 @@ Do not rename, move or delete the input and output pins.</string>
       <pos x="560" y="200"/>
     </visualElement>
     <visualElement>
-      <elementName>In</elementName>
-      <elementAttributes>
-        <entry>
-          <string>Label</string>
-          <string>1</string>
-        </entry>
-      </elementAttributes>
-      <pos x="460" y="240"/>
+      <elementName>Const</elementName>
+      <elementAttributes/>
+      <pos x="440" y="240"/>
     </visualElement>
   </visualElements>
   <wires>
     <wire>
-      <p1 x="460" y="240"/>
+      <p1 x="440" y="240"/>
       <p2 x="560" y="240"/>
     </wire>
     <wire>
