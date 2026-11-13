@@ -9,7 +9,7 @@ module p07_slt_unit (
     output wire ltu
 );
 
-    assign lt = 1'd0;   // placeholder
-    assign ltu = 1'd0;   // placeholder
+    assign lt = ($signed(a) < $signed(b));
+assign ltu = (a < b);
 
 endmodule
