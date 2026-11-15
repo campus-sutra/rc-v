@@ -32,9 +32,8 @@ AUIPC puts PC + (imm << 12) into a register.
 5. The result goes through to the register file (write-back) and is stored in rd.
 
 ## E2 Neighbour review
-Review the pull requests of P01 (ALU adder/subtractor) and P03 (PC incrementer). Paste the links to your review
-comments here.
-
+https://github.com/campus-sutra/rc-v/pull/138#pullrequestreview-5910943708
+https://github.com/subham-cyberX/rc-v/pull/1#pullrequestreview-5910880099
 ## E3 Where my block sits
 It's in the datapath layer, built from components (gates). The PC and the immediate generator feed it. The PC mux uses its output, which decides the next instruction address.
 
