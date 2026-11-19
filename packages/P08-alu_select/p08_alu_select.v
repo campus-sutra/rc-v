@@ -18,3 +18,4 @@ module p08_alu_select (
     assign zero = 1'd0;   // placeholder
 
 endmodule
+.
