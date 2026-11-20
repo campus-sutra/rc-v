@@ -10,12 +10,21 @@ module p08_alu_select (
     input  wire [31:0] shr_y,
     input  wire lt,
     input  wire ltu,
-    output wire [31:0] y,
+    output reg [31:0] y,
     output wire zero
 );
+            always @* begin
+        case (aluop)
+            4'd0, 4'd1:        y = add_y;
+            4'd2, 4'd3, 4'd4:  y = logic_y;
+            4'd5:              y = shl_y;
+            4'd6, 4'd7:        y = shr_y;
+            4'd8:              y = {31'b0, lt};
+            4'd9:              y = {31'b0, ltu};
+            default:           y = 32'd0;
+        endcase
+    end
 
-    assign y = 32'd0;   // placeholder
-    assign zero = 1'd0;   // placeholder
+    assign zero = (y == 32'd0);
 
-endmodule
-.
+    endmodule
